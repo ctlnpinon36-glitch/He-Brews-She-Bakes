@@ -235,6 +235,22 @@
       margin-top: 4px;
     }
 
+    .map-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .map-link:hover {
+      border-bottom-color: var(--accent);
+    }
+
     /* ─── BEST SELLERS ─── */
     .bestsellers-section {
       background-color: var(--warm-white);
@@ -567,17 +583,19 @@
   <h2 class="section-title">Visit Us</h2>
   <div class="maps-grid">
     <div class="map-card">
-      <iframe src="https://maps.app.goo.gl/1ULCeK5NUNdDFvks8" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=120.9428%2C14.3244%2C120.9628%2C14.3344&layer=mapnik&marker=14.3294%2C120.9528" allowfullscreen="" loading="lazy"></iframe>
       <div class="map-card-label">
         <h3>Salitran Branch</h3>
-        <p>Come find us here!</p>
+        <p>BLK 41 Lot 1 Jose Abad Santos, Dasmariñas, Cavite</p>
+        <a class="map-link" href="https://www.google.com/maps/search/He+Brews+She+Bakes+Cafe+Bakery+Salitran+Dasmarinas+Cavite" target="_blank" rel="noopener">Open in Google Maps ↗</a>
       </div>
     </div>
     <div class="map-card">
-      <iframe src="https://maps.app.goo.gl/To26YQxuGJCA7qix8" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=120.9216%2C14.3652%2C120.9416%2C14.3752&layer=mapnik&marker=14.3702%2C120.9316" allowfullscreen="" loading="lazy"></iframe>
       <div class="map-card-label">
         <h3>Lancaster Branch</h3>
-        <p>Come find us here!</p>
+        <p>One Lancaster Park Showroom, Imus, Cavite</p>
+        <a class="map-link" href="https://www.google.com/maps/search/He+Brews+She+Bakes+One+Lancaster+Park+Imus+Cavite" target="_blank" rel="noopener">Open in Google Maps ↗</a>
       </div>
     </div>
   </div>
