@@ -235,120 +235,92 @@
       margin-top: 4px;
     }
 
-    /* ─── CUSTOMER PHOTOS ─── */
-    .photos-section {
-      background-color: var(--cream);
+    /* ─── BEST SELLERS ─── */
+    .bestsellers-section {
+      background-color: var(--warm-white);
     }
 
-    .photos-intro {
-      text-align: center;
-      font-family: 'Lora', serif;
-      font-style: italic;
-      color: var(--brown-mid);
-      margin-top: -30px;
-      margin-bottom: 40px;
-      font-size: 1rem;
-    }
-
-    .photo-upload-area {
-      max-width: 900px;
+    .bestsellers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 14px;
-      margin-bottom: 28px;
+    @media (max-width: 900px) {
+      .bestsellers-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 500px) {
+      .bestsellers-grid { grid-template-columns: 1fr; }
     }
 
-    .photo-grid-item {
-      aspect-ratio: 1 / 1;
-      border-radius: 12px;
+    .bs-card {
+      background: var(--cream);
+      border-radius: 16px;
       overflow: hidden;
-      background: var(--warm-white);
-      border: 2px dashed var(--brown-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      transition: border-color 0.2s, transform 0.2s;
+      border: 1px solid rgba(200,160,122,0.25);
+      box-shadow: 0 6px 20px var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .photo-grid-item img {
+    .bs-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 36px rgba(59,42,26,0.18);
+    }
+
+    .bs-img-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+    }
+
+    .bs-img-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.4s ease;
     }
 
-    .photo-grid-item.placeholder {
-      flex-direction: column;
-      gap: 8px;
-      color: var(--brown-light);
-      font-size: 0.8rem;
-      font-family: 'Nunito', sans-serif;
-      cursor: pointer;
+    .bs-card:hover .bs-img-wrap img {
+      transform: scale(1.07);
     }
 
-    .photo-grid-item.placeholder:hover {
-      border-color: var(--accent);
-      transform: scale(1.02);
-    }
-
-    .photo-grid-item.placeholder .plus-icon {
-      font-size: 2.2rem;
-      line-height: 1;
-    }
-
-    .upload-btn-wrap {
-      text-align: center;
-    }
-
-    .upload-btn {
-      background: var(--brown-dark);
-      color: var(--warm-white);
-      border: none;
-      padding: 12px 32px;
-      border-radius: 50px;
-      font-family: 'Nunito', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-    }
-
-    .upload-btn:hover {
-      background: var(--accent);
-      transform: scale(1.04);
-    }
-
-    #photoFileInput { display: none; }
-
-    .photo-filled {
-      position: relative;
-      border: none !important;
-    }
-
-    .photo-remove-btn {
+    .bs-badge {
       position: absolute;
-      top: 6px;
-      right: 6px;
-      background: rgba(59,42,26,0.75);
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      width: 26px;
-      height: 26px;
-      font-size: 0.8rem;
-      cursor: pointer;
-      display: none;
-      align-items: center;
-      justify-content: center;
+      top: 12px;
+      left: 12px;
+      background: var(--accent);
+      color: var(--warm-white);
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
     }
 
-    .photo-filled:hover .photo-remove-btn {
-      display: flex;
+    .bs-info {
+      padding: 18px 18px 22px;
+    }
+
+    .bs-name {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.05rem;
+      color: var(--brown-dark);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .bs-desc {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--brown-mid);
+      line-height: 1.6;
     }
 
     /* ─── TESTIMONIALS ─── */
@@ -488,21 +460,55 @@
   </div>
 </section>
 
-<!-- CUSTOMER PHOTOS -->
-<section class="photos-section">
-  <h2 class="section-title">Customer Snaps</h2>
-  <p class="photos-intro">Tag us on Instagram @hebrewsshebakesph — we'd love to feature you here! 📸</p>
-  <div class="photo-upload-area">
-    <div class="photo-grid" id="photoGrid">
-      <div class="photo-grid-item placeholder" onclick="document.getElementById('photoFileInput').click()">
-        <span class="plus-icon">＋</span>
-        <span>Add your photo</span>
+<!-- BEST SELLERS -->
+<section class="bestsellers-section">
+  <h2 class="section-title">Best Sellers</h2>
+  <div class="bestsellers-grid">
+
+    <div class="bs-card">
+      <div class="bs-img-wrap">
+        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=80" alt="Spanish Latte">
+        <span class="bs-badge">Best Seller</span>
+      </div>
+      <div class="bs-info">
+        <div class="bs-name">Spanish Latte</div>
+        <div class="bs-desc">Rich espresso meets sweetened condensed milk for a smooth, creamy café classic.</div>
       </div>
     </div>
-    <div class="upload-btn-wrap">
-      <input type="file" id="photoFileInput" accept="image/*" multiple>
-      <button class="upload-btn" onclick="document.getElementById('photoFileInput').click()">📷 Upload Your Photos</button>
+
+    <div class="bs-card">
+      <div class="bs-img-wrap">
+        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&q=80" alt="Cookie Butter Latte">
+        <span class="bs-badge">Customer Fave</span>
+      </div>
+      <div class="bs-info">
+        <div class="bs-name">Cookie Butter Latte</div>
+        <div class="bs-desc">Espresso blended with warm cookie butter — indulgent, cozy, and utterly irresistible.</div>
+      </div>
     </div>
+
+    <div class="bs-card">
+      <div class="bs-img-wrap">
+        <img src="https://images.unsplash.com/photo-1512058556646-c4da40fba323?w=600&q=80" alt="Tapsilog">
+        <span class="bs-badge">Popular</span>
+      </div>
+      <div class="bs-info">
+        <div class="bs-name">Tapsilog</div>
+        <div class="bs-desc">Tender marinated beef tapa with garlic fried rice and a perfectly cooked egg.</div>
+      </div>
+    </div>
+
+    <div class="bs-card">
+      <div class="bs-img-wrap">
+        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&q=80" alt="Creamy Mushroom Spinach Chicken Pasta">
+        <span class="bs-badge">Chef's Pick</span>
+      </div>
+      <div class="bs-info">
+        <div class="bs-name">Creamy Mushroom Spinach Chicken Pasta</div>
+        <div class="bs-desc">Tender chicken, earthy mushrooms, and wilted spinach in a luscious cream sauce.</div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -583,38 +589,6 @@
 </footer>
 
 <script>
-  // ── Photo Upload ──
-  const photoFileInput = document.getElementById('photoFileInput');
-  const photoGrid = document.getElementById('photoGrid');
-
-  photoFileInput.addEventListener('change', function () {
-    Array.from(this.files).forEach(file => {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        const item = document.createElement('div');
-        item.className = 'photo-grid-item photo-filled';
-
-        const img = document.createElement('img');
-        img.src = e.target.result;
-        img.alt = 'Customer photo';
-
-        const removeBtn = document.createElement('button');
-        removeBtn.className = 'photo-remove-btn';
-        removeBtn.innerHTML = '✕';
-        removeBtn.onclick = () => item.remove();
-
-        item.appendChild(img);
-        item.appendChild(removeBtn);
-
-        // Insert before the placeholder
-        const placeholder = photoGrid.querySelector('.placeholder');
-        photoGrid.insertBefore(item, placeholder);
-      };
-      reader.readAsDataURL(file);
-    });
-    this.value = '';
-  });
-
   // ── Menu Slider ──
   const slides = ['menu1.png','menu2.png','menu3.png','menu4.png','menu5.png','menu6.png','menu7.png','menu8.png','menu9.png'];
   let currentIndex = 0;
