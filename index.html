@@ -732,6 +732,139 @@
         gap: 20px;
       }
     }
+
+    /* ─── NAVBAR ─── */
+    nav {
+      width: 100%;
+      background-color: var(--warm-white);
+      border-bottom: 1px solid rgba(200,160,122,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px var(--shadow);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      height: 56px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--brown-mid);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 50px;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      background: var(--cream);
+      color: var(--brown-dark);
+    }
+
+    .nav-links a.active {
+      background: var(--brown-dark);
+      color: var(--warm-white);
+    }
+
+    .nav-socials {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .nav-social-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1.5px solid var(--brown-light);
+      color: var(--brown-mid);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      flex-shrink: 0;
+    }
+
+    .nav-social-btn:hover {
+      background: var(--brown-dark);
+      border-color: var(--brown-dark);
+      color: var(--warm-white);
+    }
+
+    /* hamburger for mobile */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--brown-dark);
+      border-radius: 2px;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 760px) {
+      .nav-toggle { display: flex; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        width: 100%;
+        background: var(--warm-white);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 20px 20px;
+        gap: 2px;
+        border-bottom: 1px solid rgba(200,160,122,0.3);
+        box-shadow: 0 6px 16px var(--shadow);
+      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-links a {
+        width: 100%;
+        padding: 10px 14px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -741,8 +874,32 @@
   <img src="HBSBHeader.png" alt="He Brews She Bakes Logo">
 </header>
 
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#our-story">Our Story</a></li>
+      <li><a href="#our-menu">Our Menu</a></li>
+      <li><a href="#best-sellers">Best Sellers</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#visit-us">Visit Us</a></li>
+      <li><a href="#get-in-touch">Reservations</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="nav-socials">
+        <a class="nav-social-btn" href="https://www.facebook.com/HeBrewsSheBakesPh/" target="_blank" rel="noopener" title="Facebook">f</a>
+        <a class="nav-social-btn" href="https://www.instagram.com/hebrewsshebakesph/" target="_blank" rel="noopener" title="Instagram" style="font-size:1rem;">&#9749;</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" onclick="toggleNav()" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
 <!-- OUR STORY -->
-<section class="story-section">
+<section class="story-section" id="our-story">
   <div class="section-header">
     <div class="section-header-divider"><span class="section-header-dot"></span></div>
     <h2 class="section-title">Our Story</h2>
@@ -762,7 +919,7 @@
 </section>
 
 <!-- MENU -->
-<section class="menu-section">
+<section class="menu-section" id="our-menu">
   <div class="section-header">
     <div class="section-header-divider"><span class="section-header-dot"></span></div>
     <h2 class="section-title">Our Menu</h2>
@@ -781,7 +938,7 @@
 </section>
 
 <!-- BEST SELLERS -->
-<section class="bestsellers-section">
+<section class="bestsellers-section" id="best-sellers">
   <div class="section-header">
     <div class="section-header-divider"><span class="section-header-dot"></span></div>
     <h2 class="section-title">Best Sellers</h2>
@@ -837,7 +994,7 @@
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="testimonials-section">
+<section class="testimonials-section" id="testimonials">
   <div class="section-header">
     <div class="section-header-divider"><span class="section-header-dot"></span></div>
     <h2 class="section-title">What Customers Say</h2>
@@ -891,7 +1048,7 @@
 </section>
 
 <!-- VISIT US -->
-<section class="visit-us-section">
+<section class="visit-us-section" id="visit-us">
   <div class="section-header">
     <div class="section-header-divider"><span class="section-header-dot"></span></div>
     <h2 class="section-title">Visit Us</h2>
@@ -918,7 +1075,7 @@
 </section>
 
 <!-- CONTACT & RESERVATION -->
-<section class="contact-section">
+<section class="contact-section" id="get-in-touch">
   <div class="section-header">
     <div class="section-header-divider"><span class="section-header-dot"></span></div>
     <h2 class="section-title">Get in Touch</h2>
@@ -1108,6 +1265,36 @@
     window.open(`https://www.facebook.com/HeBrewsSheBakesPh/`, '_blank');
     alert('Reservation request noted! Please send your details to our Facebook page. We\'ve opened it for you.');
   }
+
+  // ── Nav toggle (mobile) ──
+  function toggleNav() {
+    const links = document.getElementById('navLinks');
+    const btn = document.getElementById('navToggle');
+    links.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  // Close mobile nav on link click
+  document.querySelectorAll('#navLinks a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+      document.getElementById('navToggle').classList.remove('open');
+    });
+  });
+
+  // Active link on scroll
+  const navSections = document.querySelectorAll('section[id]');
+  const navLinkEls = document.querySelectorAll('#navLinks a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    navSections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 80) current = sec.id;
+    });
+    navLinkEls.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }, { passive: true });
+
 </script>
 
 </body>
