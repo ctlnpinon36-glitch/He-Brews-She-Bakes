@@ -3,184 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>He Brews She Bakes</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <title>He Brews She Bakes – Our Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #f9f5f0; /* Warm neutral background */
-      color: #3a2e2c; /* Dark coffee text */
-      line-height: 1.6;
-    }
+    /* Global Styles */
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
+    body { background-color: #f8f1eb; color: #3b3b3b; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    header { text-align: center; padding: 50px 20px; }
+    header h1 { font-family: 'Pacifico', cursive; font-size: 3rem; margin-bottom: 10px; }
+    header p { font-size: 1.1rem; color: #7a7a7a; }
 
-    header {
-      background-color: #f3ebe1;
-      padding: 60px 20px;
-      text-align: center;
+    /* Menu Section */
+    .menu-section { text-align: center; padding: 50px 20px; background: #fff1e8; }
+    .menu-section h2 { font-size: 2rem; margin-bottom: 30px; }
+    .carousel { position: relative; max-width: 500px; margin: 0 auto; }
+    .carousel img { width: 100%; border-radius: 15px; }
+    .carousel button { 
+      position: absolute; top: 50%; transform: translateY(-50%); 
+      background: rgba(0,0,0,0.5); border: none; color: #fff; 
+      font-size: 2rem; padding: 5px 10px; cursor: pointer;
+      border-radius: 5px;
     }
+    .carousel button:hover { background: rgba(0,0,0,0.7); }
+    .carousel .prev { left: 10px; }
+    .carousel .next { right: 10px; }
 
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-      color: #8c5e3c; /* subtle gold/coffee accent */
-    }
+    /* Customer Photos */
+    .customer-photos { padding: 50px 20px; background: #f2ede8; text-align: center; }
+    .customer-photos h2 { font-family: 'Pacifico', cursive; font-size: 2.5rem; margin-bottom: 50px; color: #a17b5b; }
+    .customer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; justify-items: center; align-items: center; }
+    .customer-grid img { width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 
-    header h2 {
-      font-size: 1.5rem;
-      font-weight: 400;
-      margin-top: 10px;
-      color: #5c4b40;
-    }
-
-    header footer {
-      margin-top: 20px;
-      font-size: 0.9rem;
-      color: #7a6a5f;
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      font-weight: 600;
-      text-align: center;
-      margin-bottom: 40px;
-      color: #8c5e3c;
-    }
-
-    .menu-items, .testimonials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .menu-item, .testimonial {
-      background-color: #fff6f0;
-      border-radius: 10px;
-      padding: 20px;
-      width: 280px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    }
-
-    .menu-item img, .testimonial img {
-      width: 100%;
-      border-radius: 10px;
-      object-fit: cover;
-    }
-
-    .menu-item h3, .testimonial h3 {
-      margin-top: 15px;
-      font-size: 1.2rem;
-      color: #5c4b40;
-    }
-
-    .menu-item p, .testimonial p {
-      font-size: 0.95rem;
-      color: #3a2e2c;
-      margin-top: 5px;
-    }
-
-    .visit-us {
-      text-align: center;
-    }
-
-    .visit-us a {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 15px 30px;
-      background-color: #8c5e3c;
-      color: #f9f5f0;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: background-color 0.3s;
-    }
-
-    .visit-us a:hover {
-      background-color: #a97c58;
-    }
+    footer { text-align: center; padding: 30px; font-size: 0.9rem; color: #7a7a7a; background: #fff1e8; }
   </style>
 </head>
 <body>
 
-  <!-- Slide 1 – Cover -->
-  <header>
-    <h1>HOME: Heart of Meaningful Experiences</h1>
-    <h2>He Brews, She Bakes is a Place that Stays With You</h2>
-    <footer>Find us in Salitran / Orchard – Where Moments Linger</footer>
-  </header>
+<header>
+  <h1>He Brews She Bakes</h1>
+  <p>Since 2020 | Cafe & Bakery</p>
+</header>
 
-  <!-- Slide 2 – History -->
-  <section id="history">
-    <div class="section-title">Our Story</div>
-    <p>
-      He Brews She Bakes Café started as an online bakery focused on **handmade treats and comforting drinks**. 
-      Over time, it evolved into a **cozy, premium café** where visitors can linger, savor their favorite pastries, and enjoy moments of warmth and connection. 
-      Every visit is a chance to create a memory that stays with you.
-    </p>
-  </section>
+<!-- Menu Section -->
+<section class="menu-section">
+  <h2>Our Menu</h2>
+  <div class="carousel">
+    <button class="prev">&#10094;</button>
+    <img id="carousel-image" src="menu1.png" alt="Menu Item">
+    <button class="next">&#10095;</button>
+  </div>
+</section>
 
-  <!-- Slide 3 – Menu -->
-  <section id="menu">
-    <div class="section-title">Our Offerings</div>
-    <div class="menu-items">
-      <div class="menu-item">
-        <img src="menu1.jpg" alt="Signature Latte">
-        <h3>Signature Latte</h3>
-        <p>Rich, creamy, and crafted to warm your heart.</p>
-      </div>
-      <div class="menu-item">
-        <img src="menu2.jpg" alt="Homemade Croissant">
-        <h3>Homemade Croissant</h3>
-        <p>Flaky, buttery, and perfect for your coffee break.</p>
-      </div>
-      <div class="menu-item">
-        <img src="menu3.jpg" alt="Chocolate Cake">
-        <h3>Chocolate Cake</h3>
-        <p>Decadent, indulgent, and made to be shared.</p>
-      </div>
-    </div>
-  </section>
+<!-- Customer Photos -->
+<section class="customer-photos">
+  <h2>Our Happy Customers</h2>
+  <div class="customer-grid">
+    <img src="customer1.jpg" alt="Customer Photo">
+    <img src="customer2.jpg" alt="Customer Photo">
+    <img src="customer3.jpg" alt="Customer Photo">
+    <img src="customer4.jpg" alt="Customer Photo">
+  </div>
+</section>
 
-  <!-- Slide 4 – Customer Testimonials -->
-  <section id="testimonials">
-    <div class="section-title">Customer Testimonials</div>
-    <div class="testimonials">
-      <div class="testimonial">
-        <img src="customer1.jpg" alt="Customer Testimonial">
-        <h3>Anna C.</h3>
-        <p>"Every corner of this café feels like a little hug. I always leave happy!"</p>
-      </div>
-      <div class="testimonial">
-        <img src="customer2.jpg" alt="Customer Testimonial">
-        <h3>James L.</h3>
-        <p>"Perfect spot to study, relax, and enjoy the best pastries in town."</p>
-      </div>
-      <div class="testimonial">
-        <img src="customer3.jpg" alt="Customer Testimonial">
-        <h3>Maria S.</h3>
-        <p>"Cozy ambiance, great coffee, and memories that linger every visit."</p>
-      </div>
-    </div>
-  </section>
+<footer>
+  &copy; 2026 He Brews She Bakes. All Rights Reserved.
+</footer>
 
-  <!-- Slide 5 – Visit Us -->
-  <section id="visit-us" class="visit-us">
-    <div class="section-title">Visit Us</div>
-    <p>Come experience He Brews She Bakes for yourself. Your cozy corner awaits!</p>
-    <a href="#map">Find Your Way</a>
-  </section>
+<script>
+  const images = ["menu1.png","menu2.png","menu3.png","menu4.png","menu5.png","menu6.png","menu7.png","menu8.png","menu9.png"];
+  let currentIndex = 0;
+
+  const carouselImage = document.getElementById("carousel-image");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+
+  function showImage(index) {
+    carouselImage.src = images[index];
+  }
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  });
+</script>
 
 </body>
 </html>
