@@ -4,64 +4,147 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>He Brews She Bakes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; background: #f8f1eb; color: #3b3b3b; }
+    body {
+      background-color: #f8f1eb;
+      color: #3b3b3b;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
 
-    /* Header */
-    header { text-align: center; padding: 40px 0; }
-    header img { max-width: 500px; width: 90%; height: auto; }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    header {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    /* Our Story Section */
+    .our-story {
+      display: flex;
+      gap: 40px;
+      margin: 80px 10%;
+      align-items: flex-start;
+    }
+    .story-text h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .story-images {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .story-images img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
 
     /* Menu Slider */
-    .menu-section { text-align: center; padding: 20px; }
-    .menu-slider { position: relative; max-width: 400px; margin: auto; overflow: hidden; }
-    .menu-slide { display: none; }
-    .menu-slide img { width: 100%; height: auto; border-radius: 8px; }
-    .prev, .next {
-      cursor: pointer;
+    .menu-section {
+      text-align: center;
+      margin: 80px 0;
+    }
+    .menu-slider {
+      position: relative;
+      width: 300px;
+      margin: 0 auto;
+    }
+    .menu-slider img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .menu-slider button {
       position: absolute;
       top: 50%;
-      width: auto;
-      margin-top: -20px;
-      padding: 16px;
-      color: #3b3b3b;
-      font-weight: bold;
-      font-size: 20px;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-      background: rgba(255, 255, 255, 0.7);
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5);
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      border-radius: 5px;
     }
-    .next { right: 0; border-radius: 3px 0 0 3px; }
+    .menu-slider #prev { left: -40px; }
+    .menu-slider #next { right: -40px; }
 
     /* Customer Photos */
-    .customer-photos { padding: 50px 20px; background: #f2ede8; }
-    .customer-photos h2 { text-align: center; font-family: 'Pacifico', cursive; font-size: 2.5rem; margin-bottom: 40px; color: #a17b5b; }
-    .customer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 20px; justify-items: center; }
-    .customer-grid img { width: 120px; height: 120px; object-fit: cover; border-radius: 8px; border: 3px solid #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .customer-photos {
+      padding: 50px 20px;
+      background: #f2ede8;
+    }
+    .customer-photos h2 {
+      text-align: center;
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #a17b5b;
+    }
+    .customer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      align-items: center;
+    }
+    .customer-grid img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 0; /* Square shape */
+      border: 3px solid #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
 
-    footer { text-align: center; padding: 30px; font-size: 0.9rem; color: #7a7a7a; }
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #7a7a7a;
+    }
   </style>
 </head>
 <body>
+
   <!-- Header -->
   <header>
-    <img src="HBSBHeader.png" alt="He Brews She Bakes Logo">
+    <img src="HBSBHeader.png" alt="He Brews She Bakes">
   </header>
+
+  <!-- Our Story Section -->
+  <section class="our-story">
+    <div class="story-text">
+      <h2>Our Story</h2>
+      <p>
+        He Brews She Bakes Café started as an online business built around homemade baked goods created to make customers feel a sense of warmth, comfort, and familiarity — a true “home away from home.”
+      </p>
+    </div>
+    <div class="story-images">
+      <img src="story1.png" alt="Story 1">
+      <img src="story2.png" alt="Story 2">
+      <img src="story3.png" alt="Story 3">
+      <img src="story4.png" alt="Story 4">
+    </div>
+  </section>
 
   <!-- Menu Section -->
   <section class="menu-section">
     <h2>Our Menu</h2>
     <div class="menu-slider">
-      <div class="menu-slide"><img src="menu1.png" alt="Menu 1"></div>
-      <div class="menu-slide"><img src="menu2.png" alt="Menu 2"></div>
-      <div class="menu-slide"><img src="menu3.png" alt="Menu 3"></div>
-      <div class="menu-slide"><img src="menu4.png" alt="Menu 4"></div>
-      <div class="menu-slide"><img src="menu5.png" alt="Menu 5"></div>
-      <div class="menu-slide"><img src="menu6.png" alt="Menu 6"></div>
-      <div class="menu-slide"><img src="menu7.png" alt="Menu 7"></div>
-      <div class="menu-slide"><img src="menu8.png" alt="Menu 8"></div>
-      <div class="menu-slide"><img src="menu9.png" alt="Menu 9"></div>
-      <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-      <a class="next" onclick="changeSlide(1)">&#10095;</a>
+      <button id="prev">&#10094;</button>
+      <img id="menuImage" src="menu1.png" alt="Menu">
+      <button id="next">&#10095;</button>
     </div>
   </section>
 
@@ -69,31 +152,44 @@
   <section class="customer-photos">
     <h2>Our Happy Customers</h2>
     <div class="customer-grid">
-      <img src="path_to_customer_1.jpg" alt="Customer Photo">
-      <img src="path_to_customer_2.jpg" alt="Customer Photo">
-      <img src="path_to_customer_3.jpg" alt="Customer Photo">
-      <img src="path_to_customer_4.jpg" alt="Customer Photo">
+      <img src="customer_1.jpg" alt="Customer 1">
+      <img src="customer_2.jpg" alt="Customer 2">
+      <img src="customer_3.jpg" alt="Customer 3">
+      <img src="customer_4.jpg" alt="Customer 4">
+      <img src="customer_5.jpg" alt="Customer 5">
+      <img src="customer_6.jpg" alt="Customer 6">
     </div>
   </section>
 
-  <footer>&copy; 2026 He Brews She Bakes. All Rights Reserved.</footer>
+  <footer>
+    &copy; 2026 He Brews She Bakes. All Rights Reserved.
+  </footer>
 
   <script>
-    let currentSlide = 0;
-    const slides = document.getElementsByClassName("menu-slide");
-    showSlide(currentSlide);
+    const menuImages = [
+      "menu1.png",
+      "menu2.png",
+      "menu3.png",
+      "menu4.png",
+      "menu5.png",
+      "menu6.png",
+      "menu7.png",
+      "menu8.png",
+      "menu9.png"
+    ];
+    let currentIndex = 0;
+    const menuImage = document.getElementById("menuImage");
 
-    function showSlide(n) {
-      for (let i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
-      slides[n].style.display = "block";
-    }
+    document.getElementById("prev").addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + menuImages.length) % menuImages.length;
+      menuImage.src = menuImages[currentIndex];
+    });
 
-    function changeSlide(n) {
-      currentSlide += n;
-      if (currentSlide >= slides.length) currentSlide = 0;
-      if (currentSlide < 0) currentSlide = slides.length - 1;
-      showSlide(currentSlide);
-    }
+    document.getElementById("next").addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % menuImages.length;
+      menuImage.src = menuImages[currentIndex];
+    });
   </script>
+
 </body>
 </html>
