@@ -148,19 +148,35 @@
   </section>
 
   <script>
-    const slides = ['menu1.png', 'menu2.png', 'menu3.png'];
-    let currentIndex = 0;
+const slides = [
+  'menu1.png',
+  'menu2.png',
+  'menu3.png',
+  'menu4.png',
+  'menu5.png',
+  'menu6.png',
+  'menu7.png',
+  'menu8.png',
+  'menu9.png'
+];
 
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % slides.length;
-      document.getElementById('currentSlide').src = slides[currentIndex];
-    }
+let currentIndex = 0;
 
-    function prevSlide() {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      document.getElementById('currentSlide').src = slides[currentIndex];
-    }
-  </script>
+function showSlide(index) {
+  const slide = document.getElementById('currentSlide');
+  slide.src = slides[index];
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex);
+}
+
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  showSlide(currentIndex);
+}
+</script>
 
 </body>
 </html>
