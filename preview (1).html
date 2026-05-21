@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>He Brews She Bakes - Our Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: #f8f1eb;
+      color: #3b3b3b;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 50px 20px 20px;
+      background: #fff8f2;
+    }
+
+    header h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: #a17b5b;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #7a7a7a;
+    }
+
+    /* Our Menu Section */
+    .menu-section {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .menu-section h2 {
+      text-align: center;
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #a17b5b;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .menu-item {
+      background-color: #fff8f2;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .menu-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .menu-item-content {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .menu-item-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #3b3b3b;
+    }
+
+    .menu-item-content p {
+      font-size: 1rem;
+      color: #7a7a7a;
+    }
+
+    /* Customer Photos */
+    .customer-photos {
+      padding: 50px 20px;
+      background: #f2ede8;
+    }
+
+    .customer-photos h2 {
+      text-align: center;
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #a17b5b;
+    }
+
+    .customer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .customer-grid img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #7a7a7a;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.5rem; }
+      .menu-section h2 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>He Brews She Bakes</h1>
+    <p>Since 2020 | Cafe & Bakery</p>
+  </header>
+
+  <!-- Our Menu Section -->
+  <section class="menu-section">
+    <h2>Our Menu</h2>
+    <div class="menu-grid">
+      <!-- Repeat this div for each menu image -->
+      <div class="menu-item">
+        <img src="path_to_image_1.jpg" alt="Menu Item">
+        <div class="menu-item-content">
+          <h3>Menu Item Name</h3>
+          <p>Short description or price</p>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="path_to_image_2.jpg" alt="Menu Item">
+        <div class="menu-item-content">
+          <h3>Menu Item Name</h3>
+          <p>Short description or price</p>
+        </div>
+      </div>
+
+      <!-- Add more menu items as needed -->
+    </div>
+  </section>
+
+  <!-- Customer Photos -->
+  <section class="customer-photos">
+    <h2>Our Happy Customers</h2>
+    <div class="customer-grid">
+      <!-- Repeat for each customer photo -->
+      <img src="path_to_customer_1.jpg" alt="Customer Photo">
+      <img src="path_to_customer_2.jpg" alt="Customer Photo">
+      <img src="path_to_customer_3.jpg" alt="Customer Photo">
+      <img src="path_to_customer_4.jpg" alt="Customer Photo">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2026 He Brews She Bakes. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
