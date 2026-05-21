@@ -3,96 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>He Brews She Bakes – Our Menu</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+  <title>He Brews She Bakes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <style>
-    /* Global Styles */
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
-    body { background-color: #f8f1eb; color: #3b3b3b; line-height: 1.6; }
-    a { text-decoration: none; color: inherit; }
-
-    header { text-align: center; padding: 50px 20px; }
-    header h1 { font-family: 'Pacifico', cursive; font-size: 3rem; margin-bottom: 10px; }
-    header p { font-size: 1.1rem; color: #7a7a7a; }
-
-    /* Menu Section */
-    .menu-section { text-align: center; padding: 50px 20px; background: #fff1e8; }
-    .menu-section h2 { font-size: 2rem; margin-bottom: 30px; }
-    .carousel { position: relative; max-width: 500px; margin: 0 auto; }
-    .carousel img { width: 100%; border-radius: 15px; }
-    .carousel button { 
-      position: absolute; top: 50%; transform: translateY(-50%); 
-      background: rgba(0,0,0,0.5); border: none; color: #fff; 
-      font-size: 2rem; padding: 5px 10px; cursor: pointer;
-      border-radius: 5px;
+    body {
+      background-color: #f8f1eb;
+      font-family: 'Montserrat', sans-serif;
+      color: #3b3b3b;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
     }
-    .carousel button:hover { background: rgba(0,0,0,0.7); }
-    .carousel .prev { left: 10px; }
-    .carousel .next { right: 10px; }
+
+    header {
+      text-align: center;
+      padding: 50px 0 30px;
+    }
+
+    header h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3rem;
+      margin: 0;
+      color: #7a5c49;
+    }
+
+    header p {
+      margin: 10px 0 0;
+      font-size: 1rem;
+      color: #7a5c49;
+    }
+
+    /* Menu Slider */
+    .menu-section {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .menu-slider {
+      position: relative;
+      max-width: 500px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .menu-slider img {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .menu-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255,255,255,0.7);
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
 
     /* Customer Photos */
-    .customer-photos { padding: 50px 20px; background: #f2ede8; text-align: center; }
-    .customer-photos h2 { font-family: 'Pacifico', cursive; font-size: 2.5rem; margin-bottom: 50px; color: #a17b5b; }
-    .customer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; justify-items: center; align-items: center; }
-    .customer-grid img { width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .customer-photos {
+      padding: 50px 20px;
+    }
 
-    footer { text-align: center; padding: 30px; font-size: 0.9rem; color: #7a7a7a; background: #fff1e8; }
+    .customer-photos h2 {
+      text-align: center;
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #a17b5b;
+    }
+
+    .customer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .customer-grid img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 3px solid #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #7a7a7a;
+    }
   </style>
 </head>
 <body>
+  <header>
+    <h1>He Brews She Bakes</h1>
+    <p>Since 2020 | Cafe & Bakery</p>
+  </header>
 
-<header>
-  <h1>He Brews She Bakes</h1>
-  <p>Since 2020 | Cafe & Bakery</p>
-</header>
+  <!-- Menu Section -->
+  <section class="menu-section">
+    <h2>Our Menu</h2>
+    <div class="menu-slider">
+      <button class="menu-button prev">&#10094;</button>
+      <img src="menu1.png" id="menuImage" alt="Menu Item">
+      <button class="menu-button next">&#10095;</button>
+    </div>
+  </section>
 
-<!-- Menu Section -->
-<section class="menu-section">
-  <h2>Our Menu</h2>
-  <div class="carousel">
-    <button class="prev">&#10094;</button>
-    <img id="carousel-image" src="menu1.png" alt="Menu Item">
-    <button class="next">&#10095;</button>
-  </div>
-</section>
+  <!-- Customer Photos -->
+  <section class="customer-photos">
+    <h2>Our Happy Customers</h2>
+    <div class="customer-grid">
+      <img src="customer1.jpg" alt="Customer Photo">
+      <img src="customer2.jpg" alt="Customer Photo">
+      <img src="customer3.jpg" alt="Customer Photo">
+      <img src="customer4.jpg" alt="Customer Photo">
+    </div>
+  </section>
 
-<!-- Customer Photos -->
-<section class="customer-photos">
-  <h2>Our Happy Customers</h2>
-  <div class="customer-grid">
-    <img src="customer1.jpg" alt="Customer Photo">
-    <img src="customer2.jpg" alt="Customer Photo">
-    <img src="customer3.jpg" alt="Customer Photo">
-    <img src="customer4.jpg" alt="Customer Photo">
-  </div>
-</section>
+  <footer>
+    &copy; 2026 He Brews She Bakes. All Rights Reserved.
+  </footer>
 
-<footer>
-  &copy; 2026 He Brews She Bakes. All Rights Reserved.
-</footer>
+  <script>
+    const menuImages = [
+      'menu1.png', 'menu2.png', 'menu3.png', 'menu4.png',
+      'menu5.png', 'menu6.png', 'menu7.png', 'menu8.png', 'menu9.png'
+    ];
 
-<script>
-  const images = ["menu1.png","menu2.png","menu3.png","menu4.png","menu5.png","menu6.png","menu7.png","menu8.png","menu9.png"];
-  let currentIndex = 0;
+    let currentIndex = 0;
+    const menuImageElement = document.getElementById('menuImage');
 
-  const carouselImage = document.getElementById("carousel-image");
-  const prevBtn = document.querySelector(".prev");
-  const nextBtn = document.querySelector(".next");
+    document.querySelector('.prev').addEventListener('click', () => {
+      currentIndex = (currentIndex === 0) ? menuImages.length - 1 : currentIndex - 1;
+      menuImageElement.src = menuImages[currentIndex];
+    });
 
-  function showImage(index) {
-    carouselImage.src = images[index];
-  }
-
-  prevBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
-  });
-
-  nextBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
-  });
-</script>
-
+    document.querySelector('.next').addEventListener('click', () => {
+      currentIndex = (currentIndex === menuImages.length - 1) ? 0 : currentIndex + 1;
+      menuImageElement.src = menuImages[currentIndex];
+    });
+  </script>
 </body>
 </html>
