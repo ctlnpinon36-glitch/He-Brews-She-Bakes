@@ -24,41 +24,31 @@ header img {
     object-fit: cover;
 }
     }
-   .story-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 50px;
-    gap: 40px;
+.story-section {
+  display: flex;
+  justify-content: space-between; /* space between text and images */
+  align-items: flex-start;
+  padding: 50px;
+  gap: 30px;
 }
 
 .story-text {
-    flex: 1;
-    max-width: 50%;
-}
-
-.story-text h2 {
-    font-size: 2rem; /* adjust if you want bigger */
-    margin-bottom: 20px;
-}
-
-.story-text p {
-    font-size: 1.1rem;
-    line-height: 1.6;
+  flex: 1; /* take up left side */
+  max-width: 40%; /* adjust width of text */
 }
 
 .story-images {
-    flex: 1;
-    max-width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  flex: 1; /* take up right side */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2x2 images */
+  gap: 10px;
 }
 
 .story-images img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
 }
     .menu-section {
       text-align: center;
@@ -118,7 +108,7 @@ header img {
     <img src="HBSBHeader.png" alt="He Brews She Bakes Logo">
 </header>
 
-  <section class="story-section">
+<section class="story-section">
   <div class="story-text">
     <h2>Our Story</h2>
     <p>He Brews She Bakes Café started as an online business built around homemade baked goods created to make customers feel a sense of warmth, comfort, and familiarity — a true “home away from home.”</p>
