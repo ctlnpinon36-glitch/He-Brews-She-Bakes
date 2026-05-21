@@ -1,111 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>He Brews She Bakes</title>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<style>
-body {
-    background-color: #f8f1eb;
-    color: #3b3b3b;
-    line-height: 1.6;
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
-}
-header h1 {
-    font-family: 'Pacifico', cursive; /* Match logo font */
-    font-size: 3rem;
-    text-align: center;
-    margin: 50px 0 10px 0;
-    color: #7a5a42;
-}
-header p {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #7a5a42;
-    margin-bottom: 50px;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>He Brews She Bakes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f8f1eb;
+      color: #3b3b3b;
+      line-height: 1.6;
+    }
 
- /* Menu Section */
-    .menu-section { text-align: center; padding: 50px 20px; background: #fff1e8; }
-    .menu-section h2 { font-size: 2rem; margin-bottom: 30px; }
-    .carousel { position: relative; max-width: 500px; margin: 0 auto; }
-    .carousel img { width: 100%; border-radius: 15px; }
-    .carousel button { 
-      position: absolute; top: 50%; transform: translateY(-50%); 
-      background: rgba(0,0,0,0.5); border: none; color: #fff; 
-      font-size: 2rem; padding: 5px 10px; cursor: pointer;
+    /* Header */
+    header img {
+      width: 100%;
+      max-width: 600px;
+      display: block;
+      margin: 50px auto 30px;
+    }
+
+    /* Carousel */
+    .carousel {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto 50px;
+    }
+
+    .carousel img {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .carousel button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.3);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 18px;
       border-radius: 5px;
     }
-    .carousel button:hover { background: rgba(0,0,0,0.7); }
-    .carousel .prev { left: 10px; }
-    .carousel .next { right: 10px; }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
 
     /* Customer Photos */
-    .customer-photos { padding: 50px 20px; background: #f2ede8; text-align: center; }
-    .customer-photos h2 { font-family: 'Pacifico', cursive; font-size: 2.5rem; margin-bottom: 50px; color: #a17b5b; }
-    .customer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; justify-items: center; align-items: center; }
-    .customer-grid img { width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .customer-photos {
+      padding: 50px 20px;
+      background: #f2ede8;
+      text-align: center;
+    }
 
-    footer { text-align: center; padding: 30px; font-size: 0.9rem; color: #7a7a7a; background: #fff1e8; }
+    .customer-photos h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #a17b5b;
+    }
+
+    .customer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .customer-grid img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 3px solid #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #7a7a7a;
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>He Brews She Bakes</h1>
-  <p>Since 2020 | Cafe & Bakery</p>
-</header>
+  <!-- Header -->
+  <header>
+    <img src="HBSBHeader.png" alt="He Brews She Bakes Logo">
+  </header>
 
-<!-- Menu Section -->
-<section class="menu-section">
-  <h2>Our Menu</h2>
-  <div class="carousel">
-    <button class="prev">&#10094;</button>
-    <img id="carousel-image" src="menu1.png" alt="Menu Item">
-    <button class="next">&#10095;</button>
-  </div>
-</section>
+  <!-- Carousel Menu -->
+  <section class="carousel">
+    <img id="menuImage" src="menu1.png" alt="Menu Item">
+    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+  </section>
 
-<!-- Customer Photos -->
-<section class="customer-photos">
-  <h2>Our Happy Customers</h2>
-  <div class="customer-grid">
-    <img src="customer1.jpg" alt="Customer Photo">
-    <img src="customer2.jpg" alt="Customer Photo">
-    <img src="customer3.jpg" alt="Customer Photo">
-    <img src="customer4.jpg" alt="Customer Photo">
-  </div>
-</section>
+  <!-- Customer Photos -->
+  <section class="customer-photos">
+    <h2>Our Happy Customers</h2>
+    <div class="customer-grid">
+      <img src="customer1.jpg" alt="Customer Photo">
+      <img src="customer2.jpg" alt="Customer Photo">
+      <img src="customer3.jpg" alt="Customer Photo">
+      <img src="customer4.jpg" alt="Customer Photo">
+      <!-- add more customer photos here -->
+    </div>
+  </section>
 
-<footer>
-  &copy; 2026 He Brews She Bakes. All Rights Reserved.
-</footer>
+  <footer>
+    &copy; 2026 He Brews She Bakes. All Rights Reserved.
+  </footer>
 
-<script>
-  const images = ["menu1.png","menu2.png","menu3.png","menu4.png","menu5.png","menu6.png","menu7.png","menu8.png","menu9.png"];
-  let currentIndex = 0;
+  <script>
+    const menuImages = [
+      "menu1.png", "menu2.png", "menu3.png", 
+      "menu4.png", "menu5.png", "menu6.png", 
+      "menu7.png", "menu8.png", "menu9.png"
+    ];
 
-  const carouselImage = document.getElementById("carousel-image");
-  const prevBtn = document.querySelector(".prev");
-  const nextBtn = document.querySelector(".next");
+    let currentSlide = 0;
+    const menuImageElement = document.getElementById('menuImage');
 
-  function showImage(index) {
-    carouselImage.src = images[index];
-  }
-
-  prevBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
-  });
-
-  nextBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
-  });
-</script>
+    function changeSlide(direction) {
+      currentSlide += direction;
+      if(currentSlide < 0) currentSlide = menuImages.length - 1;
+      if(currentSlide >= menuImages.length) currentSlide = 0;
+      menuImageElement.src = menuImages[currentSlide];
+    }
+  </script>
 
 </body>
 </html>
