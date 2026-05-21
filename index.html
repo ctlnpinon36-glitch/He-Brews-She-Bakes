@@ -4,45 +4,159 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>He Brews She Bakes</title>
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background: #fdf2e9; }
-    header { width: 100%; text-align: center; padding: 30px 0; background: #fdf2e9; }
-    header h1 { font-size: 2.5em; margin: 0; }
-    header p { margin: 5px 0 0 0; font-size: 1em; }
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdf5ed;
+      color: #4d3b2b;
+    }
 
-    section { padding: 50px 20px; }
-    h2 { font-size: 2em; margin-bottom: 20px; }
+    /* HEADER */
+    header {
+      text-align: center;
+      padding: 0;
+    }
 
-    /* Our Story */
-    .story-section { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
-    .story-text { flex: 1; min-width: 300px; }
-    .story-images { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; flex: 1; min-width: 300px; }
-    .story-images img { width: 100%; border-radius: 10px; }
+    header img {
+      width: auto;
+      max-width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+    }
 
-    /* Menu Slider */
-    .menu-section { text-align: center; }
-    .menu-slider img { width: 300px; max-width: 90%; border-radius: 10px; }
-    .slider-nav { margin-top: 10px; }
-    .slider-nav button { padding: 10px 20px; margin: 0 5px; cursor: pointer; }
+    /* OUR STORY */
+    .story-section {
+      display: flex;
+      padding: 50px;
+      gap: 30px;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
 
-    /* Visit Us Section */
-    .visit-us-section { padding: 50px 20px; text-align: center; }
-    .visit-us-section h2 { font-size: 2em; margin-bottom: 30px; }
-    .branch-maps { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
-    .branch { flex: 1 1 400px; max-width: 500px; }
-    .branch h3 { font-size: 1.3em; margin-bottom: 10px; }
-    .branch iframe { width: 100%; height: 300px; border: 0; border-radius: 10px; }
+    .story-text {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .story-text h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .story-text p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .story-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 15px;
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .story-images img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    /* MENU SECTION */
+    .menu-section {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .menu-section h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+
+    .menu-slider {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    #currentSlide {
+      width: auto;
+      max-width: 100%;
+      height: 400px;
+      object-fit: contain;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .slider-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .slider-nav button {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    /* VISIT US SECTION */
+    .visit-us-section {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: #fdf5ed;
+    }
+
+    .visit-us-section h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2em;
+      margin-bottom: 30px;
+      color: #4d3b2b;
+    }
+
+    .visit-us-maps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .map-item {
+      flex: 1 1 250px;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    .map-item iframe {
+      width: 100%;
+      height: 250px;
+      border-radius: 10px;
+      border: 0;
+    }
+
+    .map-item h3 {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #4d3b2b;
+    }
   </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
-  <h1>He Brews She Bakes</h1>
-  <p>Since Cafe & Bakery 2020</p>
+  <img src="HBSBHeader.png" alt="He Brews She Bakes Logo">
 </header>
 
-<!-- Our Story Section -->
+<!-- OUR STORY -->
 <section class="story-section">
   <div class="story-text">
     <h2>Our Story</h2>
@@ -56,29 +170,29 @@
   </div>
 </section>
 
-<!-- Our Menu Section -->
+<!-- MENU -->
 <section class="menu-section">
   <h2>Our Menu</h2>
   <div class="menu-slider">
     <img id="currentSlide" src="menu1.png" alt="Menu Slide">
     <div class="slider-nav">
-      <button onclick="prevSlide()">&larr; Prev</button>
-      <button onclick="nextSlide()">Next &rarr;</button>
+      <button onclick="prevSlide()">← Prev</button>
+      <button onclick="nextSlide()">Next →</button>
     </div>
   </div>
 </section>
 
-<!-- Visit Us Section -->
+<!-- VISIT US -->
 <section class="visit-us-section">
   <h2>Visit Us</h2>
-  <div class="branch-maps">
-    <div class="branch">
+  <div class="visit-us-maps">
+    <div class="map-item">
+      <iframe src="https://maps.app.goo.gl/1ULCeK5NUNdDFvks8" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       <h3>Salitran Branch</h3>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.123456789!2d120.900000!3d14.300000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c3abcd12345%3A0x123456789abcdef!2sHe%20Brews%20She%20Bakes%20Salitran!5e0!3m2!1sen!2sph!4v1684745678901!5m2!1sen!2sph" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-    <div class="branch">
+    <div class="map-item">
+      <iframe src="https://maps.app.goo.gl/To26YQxuGJCA7qix8" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       <h3>Lancaster Branch</h3>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.123456789!2d120.900000!3d14.400000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c3abcd54321%3A0xabcdef123456789!2sHe%20Brews%20She%20Bakes%20Lancaster!5e0!3m2!1sen!2sph!4v1684745678902!5m2!1sen!2sph" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </section>
