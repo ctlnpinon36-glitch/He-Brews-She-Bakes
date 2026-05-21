@@ -1,211 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>He Brews She Bakes</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fdf5ed;
-      color: #4d3b2b;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>He Brews She Bakes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #fdf5ed;
+            color: #4d3b2b;
+        }
 
-    /* HEADER */
-    header {
-      text-align: center;
-      padding: 0;
-    }
+        /* HEADER */
+        header {
+            text-align: center;
+            width: 100%;
+        }
+        header img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
 
-    header img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
+        /* OUR STORY */
+        .story-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 50px;
+            gap: 30px;
+        }
+        .story-text {
+            flex: 1;
+        }
+        .story-text h2 {
+            font-family: 'Pacifico', cursive;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .story-text p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        .story-images {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .story-images img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
 
-    /* OUR STORY SECTION */
-    .story-section {
-      display: flex;
-      padding: 50px;
-      gap: 30px;
-      justify-content: center;
-      align-items: flex-start;
-    }
+        /* MENU SECTION */
+        .menu-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .menu-section h2 {
+            font-family: 'Pacifico', cursive;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .menu-slider {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .menu-slider img {
+            width: auto;
+            max-width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
 
-    .story-text {
-      flex: 1;
-      max-width: 500px;
-    }
+        /* BEST SELLERS */
+        .best-sellers-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .best-sellers-section h2 {
+            font-family: 'Pacifico', cursive;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+        .best-sellers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .best-sellers-grid .item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .best-sellers-grid .item h3 {
+            margin: 10px 0 5px 0;
+        }
+        .best-sellers-grid .item p {
+            font-size: 0.9rem;
+        }
 
-    .story-text h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    .story-text p {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    .story-images {
-      flex: 1;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .story-images img {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    /* MENU SECTION */
-    .menu-section {
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    .menu-section h2 {
-      font-size: 2rem;
-      margin-bottom: 30px;
-    }
-
-    .menu-slider {
-      position: relative;
-      max-width: 100%;
-      margin: 0 auto;
-    }
-
-    .menu-slider img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-
-    .slider-nav {
-      margin-top: 10px;
-    }
-
-    .slider-nav button {
-      padding: 8px 15px;
-      margin: 0 5px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    /* BEST SELLERS SECTION */
-    .best-sellers-section {
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    .best-sellers-section h2 {
-      font-size: 2rem;
-      margin-bottom: 30px;
-    }
-
-    .best-sellers-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .best-sellers-grid .item {
-      text-align: center;
-    }
-
-    .best-sellers-grid img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-
-    .best-sellers-grid h3 {
-      margin-top: 10px;
-      font-size: 1.1rem;
-      font-weight: bold;
-    }
-  </style>
+        /* GENERAL BUTTONS */
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
+<!-- HEADER -->
+<header>
     <img src="HBSBHeader.png" alt="He Brews She Bakes Logo">
-  </header>
+</header>
 
-  <!-- OUR STORY -->
-  <section class="story-section">
+<!-- OUR STORY -->
+<section class="story-section">
     <div class="story-text">
-      <h2>Our Story</h2>
-      <p>He Brews She Bakes Café started as an online business built around homemade baked goods created to make customers feel a sense of warmth, comfort, and familiarity — a true “home away from home.”</p>
+        <h2>Our Story</h2>
+        <p>He Brews She Bakes Café started as an online business built around homemade baked goods created to make customers feel a sense of warmth, comfort, and familiarity — a true “home away from home.”</p>
     </div>
     <div class="story-images">
-      <img src="story1.png" alt="Story Image 1">
-      <img src="story2.png" alt="Story Image 2">
-      <img src="story3.png" alt="Story Image 3">
-      <img src="story4.png" alt="Story Image 4">
+        <img src="story1.png" alt="Story Image 1">
+        <img src="story2.png" alt="Story Image 2">
+        <img src="story3.png" alt="Story Image 3">
+        <img src="story4.png" alt="Story Image 4">
     </div>
-  </section>
+</section>
 
-  <!-- OUR MENU -->
-  <section class="menu-section">
+<!-- MENU -->
+<section class="menu-section">
     <h2>Our Menu</h2>
     <div class="menu-slider">
-      <img id="currentSlide" src="menu1.png" alt="Menu Slide">
-      <div class="slider-nav">
-        <button onclick="prevSlide()">← Prev</button>
-        <button onclick="nextSlide()">Next →</button>
-      </div>
+        <img id="currentSlide" src="menu1.png" alt="Menu Slide">
+        <div class="slider-nav">
+            <button onclick="prevSlide()">← Prev</button>
+            <button onclick="nextSlide()">Next →</button>
+        </div>
     </div>
-  </section>
+</section>
 
-  <!-- OUR BEST SELLERS -->
-  <section class="best-sellers-section">
+<!-- BEST SELLERS -->
+<section class="best-sellers-section">
     <h2>Our Best Sellers</h2>
     <div class="best-sellers-grid">
-      <div class="item">
-        <img src="best1.png" alt="Spanish Latte">
-        <h3>Spanish Latte</h3>
-      </div>
-      <div class="item">
-        <img src="best2.png" alt="Cookie Butter Latte">
-        <h3>Cookie Butter Latte</h3>
-      </div>
-      <div class="item">
-        <img src="best3.png" alt="Tapsilog">
-        <h3>Tapsilog</h3>
-      </div>
-      <div class="item">
-        <img src="best4.png" alt="Creamy Mushroom Spinach Chicken Pasta">
-        <h3>Creamy Mushroom Spinach Chicken Pasta</h3>
-      </div>
+        <div class="item">
+            <img src="best1.png" alt="Spanish Latte">
+            <h3>Spanish Latte</h3>
+        </div>
+        <div class="item">
+            <img src="best2.png" alt="Cookie Butter Latte">
+            <h3>Cookie Butter Latte</h3>
+        </div>
+        <div class="item">
+            <img src="best3.png" alt="Tapsilog">
+            <h3>Tapsilog</h3>
+        </div>
+        <div class="item">
+            <img src="best4.png" alt="Creamy Mushroom Spinach Chicken Pasta">
+            <h3>Creamy Mushroom Spinach Chicken Pasta</h3>
+        </div>
     </div>
-  </section>
+</section>
 
-  <!-- MENU SLIDER SCRIPT -->
-  <script>
+<script>
     const slides = ['menu1.png','menu2.png','menu3.png','menu4.png','menu5.png','menu6.png','menu7.png','menu8.png','menu9.png'];
     let currentIndex = 0;
 
     function showSlide(index) {
-      const img = document.getElementById('currentSlide');
-      img.src = slides[index];
+        const img = document.getElementById('currentSlide');
+        img.src = slides[index];
     }
 
     function prevSlide() {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      showSlide(currentIndex);
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
     }
 
     function nextSlide() {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
     }
-  </script>
+</script>
 
 </body>
 </html>
