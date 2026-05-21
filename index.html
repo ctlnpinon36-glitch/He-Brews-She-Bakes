@@ -235,6 +235,187 @@
       margin-top: 4px;
     }
 
+    /* ─── CUSTOMER PHOTOS ─── */
+    .photos-section {
+      background-color: var(--cream);
+    }
+
+    .photos-intro {
+      text-align: center;
+      font-family: 'Lora', serif;
+      font-style: italic;
+      color: var(--brown-mid);
+      margin-top: -30px;
+      margin-bottom: 40px;
+      font-size: 1rem;
+    }
+
+    .photo-upload-area {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .photo-grid-item {
+      aspect-ratio: 1 / 1;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--warm-white);
+      border: 2px dashed var(--brown-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .photo-grid-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-grid-item.placeholder {
+      flex-direction: column;
+      gap: 8px;
+      color: var(--brown-light);
+      font-size: 0.8rem;
+      font-family: 'Nunito', sans-serif;
+      cursor: pointer;
+    }
+
+    .photo-grid-item.placeholder:hover {
+      border-color: var(--accent);
+      transform: scale(1.02);
+    }
+
+    .photo-grid-item.placeholder .plus-icon {
+      font-size: 2.2rem;
+      line-height: 1;
+    }
+
+    .upload-btn-wrap {
+      text-align: center;
+    }
+
+    .upload-btn {
+      background: var(--brown-dark);
+      color: var(--warm-white);
+      border: none;
+      padding: 12px 32px;
+      border-radius: 50px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .upload-btn:hover {
+      background: var(--accent);
+      transform: scale(1.04);
+    }
+
+    #photoFileInput { display: none; }
+
+    .photo-filled {
+      position: relative;
+      border: none !important;
+    }
+
+    .photo-remove-btn {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      background: rgba(59,42,26,0.75);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 26px;
+      height: 26px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .photo-filled:hover .photo-remove-btn {
+      display: flex;
+    }
+
+    /* ─── TESTIMONIALS ─── */
+    .testimonials-section {
+      background-color: var(--warm-white);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background: var(--cream);
+      border-radius: 16px;
+      padding: 28px 24px;
+      border: 1px solid rgba(200,160,122,0.25);
+      box-shadow: 0 4px 16px var(--shadow);
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '\201C';
+      font-family: 'Lora', serif;
+      font-size: 5rem;
+      color: var(--brown-light);
+      opacity: 0.3;
+      position: absolute;
+      top: -10px;
+      left: 18px;
+      line-height: 1;
+    }
+
+    .testimonial-stars {
+      color: var(--accent);
+      font-size: 1rem;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-text {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--brown-mid);
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-author {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--brown-dark);
+    }
+
+    .testimonial-source {
+      font-size: 0.78rem;
+      color: var(--brown-light);
+      margin-top: 2px;
+    }
+
     /* ─── FOOTER ─── */
     footer {
       background-color: var(--brown-dark);
@@ -307,6 +488,74 @@
   </div>
 </section>
 
+<!-- CUSTOMER PHOTOS -->
+<section class="photos-section">
+  <h2 class="section-title">Customer Snaps</h2>
+  <p class="photos-intro">Tag us on Instagram @hebrewsshebakesph — we'd love to feature you here! 📸</p>
+  <div class="photo-upload-area">
+    <div class="photo-grid" id="photoGrid">
+      <div class="photo-grid-item placeholder" onclick="document.getElementById('photoFileInput').click()">
+        <span class="plus-icon">＋</span>
+        <span>Add your photo</span>
+      </div>
+    </div>
+    <div class="upload-btn-wrap">
+      <input type="file" id="photoFileInput" accept="image/*" multiple>
+      <button class="upload-btn" onclick="document.getElementById('photoFileInput').click()">📷 Upload Your Photos</button>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <h2 class="section-title">What Customers Say</h2>
+  <div class="testimonials-grid">
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">The food was absolutely scrumptious, and the coffee and drinks were on point! The ambiance was so cozy and inviting, making us feel right at home. We enjoyed it so much — totally worth it! We'll definitely be back for more!</p>
+      <div class="testimonial-author">Happy Diner</div>
+      <div class="testimonial-source">via Restaurant Guru · Food 5 · Service 5 · Atmosphere 5</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">A charming café that perfectly blends a cozy coffee shop vibe with a delightful bakery experience. The interiors are thoughtfully designed with comfortable seating, warm lighting, and a welcoming ambiance — perfect for solo coffee breaks, casual meet-ups, or even light work sessions.</p>
+      <div class="testimonial-author">Trip.com Reviewer</div>
+      <div class="testimonial-source">via Trip.com Philippines</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">The menu offers a wide selection of expertly brewed coffee, specialty lattes, and refreshing iced drinks. The freshly baked pastries, breads, and desserts are not only visually appealing but also delicious — so easy to pair your drink with something sweet or savory.</p>
+      <div class="testimonial-author">Verified Visitor</div>
+      <div class="testimonial-source">via Trip.com Philippines</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">It's my nth time here because I really enjoy the drinks and food — very worth it for the price. Service is friendly, attentive, and professional. Prices are so reasonable given the quality of everything and the cozy ambiance.</p>
+      <div class="testimonial-author">Regular Customer</div>
+      <div class="testimonial-source">via Restaurant Guru · Price per person: ₱1–500</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">A must-visit for anyone looking for great coffee, tasty baked treats, and a warm, inviting café environment. The atmosphere is relaxing, inviting, and stylish — He Brews She Bakes really is a hidden gem in Dasmariñas!</p>
+      <div class="testimonial-author">Café Explorer</div>
+      <div class="testimonial-source">via Trip.com Philippines</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★☆</div>
+      <p class="testimonial-text">The couple owners are very cute and accommodating. The food is a solid 5 and the atmosphere is lovely. This place truly has heart — you can feel how much care goes into everything they serve.</p>
+      <div class="testimonial-author">Local Foodie</div>
+      <div class="testimonial-source">via Restaurant Guru · Food 5 · Atmosphere 4</div>
+    </div>
+
+  </div>
+</section>
+
 <!-- VISIT US -->
 <section class="visit-us-section">
   <h2 class="section-title">Visit Us</h2>
@@ -334,6 +583,39 @@
 </footer>
 
 <script>
+  // ── Photo Upload ──
+  const photoFileInput = document.getElementById('photoFileInput');
+  const photoGrid = document.getElementById('photoGrid');
+
+  photoFileInput.addEventListener('change', function () {
+    Array.from(this.files).forEach(file => {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const item = document.createElement('div');
+        item.className = 'photo-grid-item photo-filled';
+
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        img.alt = 'Customer photo';
+
+        const removeBtn = document.createElement('button');
+        removeBtn.className = 'photo-remove-btn';
+        removeBtn.innerHTML = '✕';
+        removeBtn.onclick = () => item.remove();
+
+        item.appendChild(img);
+        item.appendChild(removeBtn);
+
+        // Insert before the placeholder
+        const placeholder = photoGrid.querySelector('.placeholder');
+        photoGrid.insertBefore(item, placeholder);
+      };
+      reader.readAsDataURL(file);
+    });
+    this.value = '';
+  });
+
+  // ── Menu Slider ──
   const slides = ['menu1.png','menu2.png','menu3.png','menu4.png','menu5.png','menu6.png','menu7.png','menu8.png','menu9.png'];
   let currentIndex = 0;
 
