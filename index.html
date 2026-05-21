@@ -27,98 +27,119 @@ header p {
     color: #7a5a42;
     margin-bottom: 50px;
 }
+
+/* Menu Section */
 .menu-section {
-    text-align: center;
-    margin-bottom: 50px;
+  text-align: center;
+  padding: 50px 20px;
+}
+.menu-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
 }
 .menu-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 20px;
-    padding: 0 20px;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding-bottom: 20px;
 }
 .menu-item {
-    flex: 0 0 auto;
-    scroll-snap-align: center;
-    text-align: center;
-    border-radius: 10px;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  flex: 0 0 auto;
+  width: 300px;
+  scroll-snap-align: start;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 .menu-item img {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
+.menu-item h3 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+.menu-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Customer Photos Section */
 .customer-photos {
-    padding: 50px 20px;
-    background: #f2ede8;
+  background-color: #f2ede8;
+  padding: 50px 20px;
 }
 .customer-photos h2 {
-    text-align: center;
-    font-family: 'Pacifico', cursive;
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    color: #7a5a42;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #a17b5b;
 }
 .customer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    justify-items: center;
-    align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
 }
 .customer-grid img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 3px solid #fff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px; /* square frames */
+  border: 3px solid #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+
+/* Footer */
 footer {
-    text-align: center;
-    padding: 30px;
-    font-size: 0.9rem;
-    color: #7a7a7a;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.9rem;
+  color: #7a7a7a;
 }
 </style>
 </head>
 <body>
+
 <header>
-<h1>He Brews She Bakes</h1>
-<p>Since 2020 | Cafe & Bakery</p>
+  <h1>He Brews She Bakes</h1>
+  <p>Since 2020 | Cafe & Bakery</p>
 </header>
+
 <section class="menu-section">
-<h2>Our Menu</h2>
-<div class="menu-grid">
-<div class="menu-item"><img src="menu1.png" alt="Menu Item"><h3>Menu Item 1</h3><p>Description</p></div>
-<div class="menu-item"><img src="menu2.png" alt="Menu Item"><h3>Menu Item 2</h3><p>Description</p></div>
-<div class="menu-item"><img src="menu3.png" alt="Menu Item"><h3>Menu Item 3</h3><p>Description</p></div>
-<div class="menu-item"><img src="menu4.png" alt="Menu Item"><h3>Menu Item 4</h3><p>Description</p></div>
-<div class="menu-item"><img src="menu5.png" alt="Menu Item"><h3>Menu Item 5</h3><p>Description</p></div>
-<div class="menu-item"><img src="menu6.png" alt="Menu Item"><h3>Menu Item 6</h3><p>Description</p></div>
-<div class="menu-item"><img src="menu7.png" alt="Menu Item"><h3>Menu Item 7</h3><p>Description</p></div>
-<div class="menu-item"><img src="menu8.png" alt="Menu Item"><h3>Menu Item 8</h3><p>Description</p></div>
-<div class="menu-item"><img src="menu9.png" alt="Menu Item"><h3>Menu Item 9</h3><p>Description</p></div>
-</div>
+  <h2>Our Menu</h2>
+  <div class="menu-grid">
+    <div class="menu-item"><img src="menu1.png" alt="Menu 1"></div>
+    <div class="menu-item"><img src="menu2.png" alt="Menu 2"></div>
+    <div class="menu-item"><img src="menu3.png" alt="Menu 3"></div>
+    <div class="menu-item"><img src="menu4.png" alt="Menu 4"></div>
+    <div class="menu-item"><img src="menu5.png" alt="Menu 5"></div>
+    <div class="menu-item"><img src="menu6.png" alt="Menu 6"></div>
+    <div class="menu-item"><img src="menu7.png" alt="Menu 7"></div>
+    <div class="menu-item"><img src="menu8.png" alt="Menu 8"></div>
+    <div class="menu-item"><img src="menu9.png" alt="Menu 9"></div>
+  </div>
 </section>
+
 <section class="customer-photos">
-<h2>Our Happy Customers</h2>
-<div class="customer-grid">
-<img src="customer1.jpg" alt="Customer Photo">
-<img src="customer2.jpg" alt="Customer Photo">
-<img src="customer3.jpg" alt="Customer Photo">
-<img src="customer4.jpg" alt="Customer Photo">
-<img src="customer5.jpg" alt="Customer Photo">
-<img src="customer6.jpg" alt="Customer Photo">
-</div>
+  <h2>Our Happy Customers</h2>
+  <div class="customer-grid">
+    <img src="customer_1.jpg" alt="Customer 1">
+    <img src="customer_2.jpg" alt="Customer 2">
+    <img src="customer_3.jpg" alt="Customer 3">
+    <img src="customer_4.jpg" alt="Customer 4">
+    <img src="customer_5.jpg" alt="Customer 5">
+  </div>
 </section>
+
 <footer>
-&copy; 2026 He Brews She Bakes. All Rights Reserved.
+  &copy; 2026 He Brews She Bakes. All Rights Reserved.
 </footer>
+
 </body>
 </html>
