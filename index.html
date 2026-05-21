@@ -1,152 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>He Brews She Bakes</title>
-<style>
-  body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fdf5ec;
-  }
-  header {
-    text-align: center;
-    padding: 40px 20px 20px;
-  }
-  header img {
-    max-width: 400px;
-    width: 80%;
-    height: auto;
-  }
-  section {
-    padding: 60px 20px;
-  }
-  /* Our Story */
-  .our-story {
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
-    align-items: flex-start;
-  }
-  .our-story-text {
-    flex: 1;
-    min-width: 280px;
-  }
-  .our-story-text h2 {
-    font-family: 'Pacifico', cursive;
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  .our-story-text p {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  .our-story-images {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    min-width: 280px;
-  }
-  .our-story-images img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-  /* Menu */
-  .menu-section {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-  .menu-section img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-  .menu-nav {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
-  .menu-nav button {
-    padding: 8px 16px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  /* Customer photos */
-  .customer-photos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    justify-items: center;
-  }
-  .customer-photos img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>He Brews She Bakes</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fdf5ec;
+      margin: 0;
+      padding: 0;
+    }
+    /* Header Section */
+    .header {
+      width: 100%;
+      height: 300px; /* Adjust height as needed */
+      background: url('HBSBHeader.png') center center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Our Story Section */
+    .our-story {
+      display: flex;
+      justify-content: space-between;
+      padding: 50px 100px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .story-text {
+      flex: 1 1 40%;
+      min-width: 300px;
+    }
+
+    .story-images {
+      flex: 1 1 55%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
+
+    .story-images img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    /* Menu Section */
+    .menu-section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .menu-container {
+      width: 80%;
+      margin: 0 auto;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .menu-slider {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .menu-slider img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      margin: 0 auto;
+    }
+
+    .menu-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .menu-nav button {
+      background-color: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 10px 20px;
+      border-radius: 50%;
+    }
+
+    @media (max-width: 768px) {
+      .our-story {
+        flex-direction: column;
+        padding: 20px;
+      }
+      .story-images {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!-- Header -->
-  <header>
-    <img src="HBSBHeader.png" alt="He Brews She Bakes Logo">
-  </header>
+  <!-- Header -->
+  <div class="header"></div>
 
-<section class="our-story">
-  <div class="our-story-text">
-    <h2>Our Story</h2>
-    <p>He Brews She Bakes Café started as an online business built around homemade baked goods created to make customers feel a sense of warmth, comfort, and familiarity — a true “home away from home.”</p>
-  </div>
-  <div class="our-story-images">
-    <img src="story1.png" alt="Story 1">
-    <img src="story2.png" alt="Story 2">
-    <img src="story3.png" alt="Story 3">
-    <img src="story4.png" alt="Story 4">
-  </div>
-</section>
+  <!-- Our Story Section -->
+  <section class="our-story">
+    <div class="story-text">
+      <h2>Our Story</h2>
+      <p>He Brews She Bakes Café started as an online business built around homemade baked goods created to make customers feel a sense of warmth, comfort, and familiarity — a true “home away from home.”</p>
+    </div>
+    <div class="story-images">
+      <img src="story1.png" alt="Story 1">
+      <img src="story2.png" alt="Story 2">
+      <img src="story3.png" alt="Story 3">
+      <img src="story4.png" alt="Story 4">
+    </div>
+  </section>
 
-<section class="menu-section">
-  <h2>Our Menu</h2>
-  <img id="menu-image" src="menu1.png" alt="Menu 1">
-  <div class="menu-nav">
-    <button id="prev-btn">&lt; Prev</button>
-    <button id="next-btn">Next &gt;</button>
-  </div>
-</section>
+  <!-- Menu Section -->
+  <section class="menu-section">
+    <h2>Our Menu</h2>
+    <div class="menu-container">
+      <div class="menu-slider" id="menuSlider">
+        <img src="menu1.png" alt="Menu 1">
+        <img src="menu2.png" alt="Menu 2">
+        <img src="menu3.png" alt="Menu 3">
+        <img src="menu4.png" alt="Menu 4">
+        <img src="menu5.png" alt="Menu 5">
+        <img src="menu6.png" alt="Menu 6">
+        <img src="menu7.png" alt="Menu 7">
+        <img src="menu8.png" alt="Menu 8">
+        <img src="menu9.png" alt="Menu 9">
+      </div>
+      <div class="menu-nav">
+        <button onclick="prevSlide()">&#10094;</button>
+        <button onclick="nextSlide()">&#10095;</button>
+      </div>
+    </div>
+  </section>
 
-<section class="customer-photos">
-  <h2>Our Happy Customers</h2>
-  <img src="customer1.png" alt="Customer 1">
-  <img src="customer2.png" alt="Customer 2">
-  <img src="customer3.png" alt="Customer 3">
-  <img src="customer4.png" alt="Customer 4">
-</section>
+  <script>
+    let currentSlide = 0;
+    const slider = document.getElementById('menuSlider');
+    const totalSlides = slider.children.length;
 
-<script>
-  const menuImages = [
-    "menu1.png","menu2.png","menu3.png","menu4.png","menu5.png",
-    "menu6.png","menu7.png","menu8.png","menu9.png"
-  ];
-  let currentMenu = 0;
-  const menuImageEl = document.getElementById('menu-image');
+    function updateSlider() {
+      slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
 
-  document.getElementById('prev-btn').addEventListener('click', () => {
-    currentMenu = (currentMenu - 1 + menuImages.length) % menuImages.length;
-    menuImageEl.src = menuImages[currentMenu];
-  });
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlider();
+    }
 
-  document.getElementById('next-btn').addEventListener('click', () => {
-    currentMenu = (currentMenu + 1) % menuImages.length;
-    menuImageEl.src = menuImages[currentMenu];
-  });
-</script>
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateSlider();
+    }
+  </script>
 
 </body>
 </html>
