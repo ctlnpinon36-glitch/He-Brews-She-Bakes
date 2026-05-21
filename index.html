@@ -37,16 +37,17 @@
     header {
       width: 100%;
       background-color: #f0e8df;
-      border-bottom: 1px solid rgba(200,160,122,0.3);
       box-shadow: 0 2px 16px var(--shadow);
+      position: relative;
     }
 
     header img {
       width: 100%;
       max-width: 100%;
-      height: auto;
+      height: 220px;
       display: block;
       object-fit: cover;
+      object-position: center top;
     }
 
     /* ─── SECTION SHARED ─── */
@@ -736,12 +737,13 @@
     /* ─── NAVBAR ─── */
     nav {
       width: 100%;
-      background-color: var(--warm-white);
+      background-color: rgba(255, 250, 244, 0.92);
       border-bottom: 1px solid rgba(200,160,122,0.3);
       position: sticky;
       top: 0;
       z-index: 100;
       box-shadow: 0 2px 12px var(--shadow);
+      backdrop-filter: blur(6px);
     }
 
     .nav-inner {
@@ -869,34 +871,31 @@
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- HEADER with NAV on top -->
 <header>
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#our-story">Our Story</a></li>
+        <li><a href="#our-menu">Our Menu</a></li>
+        <li><a href="#best-sellers">Best Sellers</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#visit-us">Visit Us</a></li>
+        <li><a href="#get-in-touch">Reservations</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="nav-socials">
+          <a class="nav-social-btn" href="https://www.facebook.com/HeBrewsSheBakesPh/" target="_blank" rel="noopener" title="Facebook">f</a>
+          <a class="nav-social-btn" href="https://www.instagram.com/hebrewsshebakesph/" target="_blank" rel="noopener" title="Instagram" style="font-size:1rem;">&#9749;</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" onclick="toggleNav()" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
   <img src="HBSBHeader.png" alt="He Brews She Bakes Logo">
 </header>
-
-
-<!-- NAV -->
-<nav id="main-nav">
-  <div class="nav-inner">
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#our-story">Our Story</a></li>
-      <li><a href="#our-menu">Our Menu</a></li>
-      <li><a href="#best-sellers">Best Sellers</a></li>
-      <li><a href="#testimonials">Reviews</a></li>
-      <li><a href="#visit-us">Visit Us</a></li>
-      <li><a href="#get-in-touch">Reservations</a></li>
-    </ul>
-    <div style="display:flex;align-items:center;gap:10px;">
-      <div class="nav-socials">
-        <a class="nav-social-btn" href="https://www.facebook.com/HeBrewsSheBakesPh/" target="_blank" rel="noopener" title="Facebook">f</a>
-        <a class="nav-social-btn" href="https://www.instagram.com/hebrewsshebakesph/" target="_blank" rel="noopener" title="Instagram" style="font-size:1rem;">&#9749;</a>
-      </div>
-      <button class="nav-toggle" id="navToggle" onclick="toggleNav()" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</nav>
 
 <!-- OUR STORY -->
 <section class="story-section" id="our-story">
