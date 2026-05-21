@@ -4,144 +4,96 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>He Brews She Bakes</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #f8f1eb;
-      color: #3b3b3b;
-      line-height: 1.6;
-    }
+    body { font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; background: #f8f1eb; color: #3b3b3b; }
 
     /* Header */
-    header img {
-      width: 100%;
-      max-width: 600px;
-      display: block;
-      margin: 50px auto 30px;
-    }
+    header { text-align: center; padding: 40px 0; }
+    header img { max-width: 500px; width: 90%; height: auto; }
 
-    /* Carousel */
-    .carousel {
-      position: relative;
-      max-width: 800px;
-      margin: 0 auto 50px;
-    }
-
-    .carousel img {
-      width: 100%;
-      display: block;
-      border-radius: 10px;
-    }
-
-    .carousel button {
+    /* Menu Slider */
+    .menu-section { text-align: center; padding: 20px; }
+    .menu-slider { position: relative; max-width: 400px; margin: auto; overflow: hidden; }
+    .menu-slide { display: none; }
+    .menu-slide img { width: 100%; height: auto; border-radius: 8px; }
+    .prev, .next {
+      cursor: pointer;
       position: absolute;
       top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.3);
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-size: 18px;
-      border-radius: 5px;
+      width: auto;
+      margin-top: -20px;
+      padding: 16px;
+      color: #3b3b3b;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background: rgba(255, 255, 255, 0.7);
     }
-
-    .prev {
-      left: 10px;
-    }
-
-    .next {
-      right: 10px;
-    }
+    .next { right: 0; border-radius: 3px 0 0 3px; }
 
     /* Customer Photos */
-    .customer-photos {
-      padding: 50px 20px;
-      background: #f2ede8;
-      text-align: center;
-    }
+    .customer-photos { padding: 50px 20px; background: #f2ede8; }
+    .customer-photos h2 { text-align: center; font-family: 'Pacifico', cursive; font-size: 2.5rem; margin-bottom: 40px; color: #a17b5b; }
+    .customer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 20px; justify-items: center; }
+    .customer-grid img { width: 120px; height: 120px; object-fit: cover; border-radius: 8px; border: 3px solid #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 
-    .customer-photos h2 {
-      font-family: 'Pacifico', cursive;
-      font-size: 2.5rem;
-      margin-bottom: 50px;
-      color: #a17b5b;
-    }
-
-    .customer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 20px;
-      justify-items: center;
-      align-items: center;
-    }
-
-    .customer-grid img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 10px;
-      border: 3px solid #fff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 0.9rem;
-      color: #7a7a7a;
-    }
+    footer { text-align: center; padding: 30px; font-size: 0.9rem; color: #7a7a7a; }
   </style>
 </head>
 <body>
-
   <!-- Header -->
   <header>
     <img src="HBSBHeader.png" alt="He Brews She Bakes Logo">
   </header>
 
-  <!-- Carousel Menu -->
-  <section class="carousel">
-    <img id="menuImage" src="menu1.png" alt="Menu Item">
-    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+  <!-- Menu Section -->
+  <section class="menu-section">
+    <h2>Our Menu</h2>
+    <div class="menu-slider">
+      <div class="menu-slide"><img src="menu1.png" alt="Menu 1"></div>
+      <div class="menu-slide"><img src="menu2.png" alt="Menu 2"></div>
+      <div class="menu-slide"><img src="menu3.png" alt="Menu 3"></div>
+      <div class="menu-slide"><img src="menu4.png" alt="Menu 4"></div>
+      <div class="menu-slide"><img src="menu5.png" alt="Menu 5"></div>
+      <div class="menu-slide"><img src="menu6.png" alt="Menu 6"></div>
+      <div class="menu-slide"><img src="menu7.png" alt="Menu 7"></div>
+      <div class="menu-slide"><img src="menu8.png" alt="Menu 8"></div>
+      <div class="menu-slide"><img src="menu9.png" alt="Menu 9"></div>
+      <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+      <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
   </section>
 
   <!-- Customer Photos -->
   <section class="customer-photos">
     <h2>Our Happy Customers</h2>
     <div class="customer-grid">
-      <img src="customer1.jpg" alt="Customer Photo">
-      <img src="customer2.jpg" alt="Customer Photo">
-      <img src="customer3.jpg" alt="Customer Photo">
-      <img src="customer4.jpg" alt="Customer Photo">
-      <!-- add more customer photos here -->
+      <img src="path_to_customer_1.jpg" alt="Customer Photo">
+      <img src="path_to_customer_2.jpg" alt="Customer Photo">
+      <img src="path_to_customer_3.jpg" alt="Customer Photo">
+      <img src="path_to_customer_4.jpg" alt="Customer Photo">
     </div>
   </section>
 
-  <footer>
-    &copy; 2026 He Brews She Bakes. All Rights Reserved.
-  </footer>
+  <footer>&copy; 2026 He Brews She Bakes. All Rights Reserved.</footer>
 
   <script>
-    const menuImages = [
-      "menu1.png", "menu2.png", "menu3.png", 
-      "menu4.png", "menu5.png", "menu6.png", 
-      "menu7.png", "menu8.png", "menu9.png"
-    ];
-
     let currentSlide = 0;
-    const menuImageElement = document.getElementById('menuImage');
+    const slides = document.getElementsByClassName("menu-slide");
+    showSlide(currentSlide);
 
-    function changeSlide(direction) {
-      currentSlide += direction;
-      if(currentSlide < 0) currentSlide = menuImages.length - 1;
-      if(currentSlide >= menuImages.length) currentSlide = 0;
-      menuImageElement.src = menuImages[currentSlide];
+    function showSlide(n) {
+      for (let i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+      slides[n].style.display = "block";
+    }
+
+    function changeSlide(n) {
+      currentSlide += n;
+      if (currentSlide >= slides.length) currentSlide = 0;
+      if (currentSlide < 0) currentSlide = slides.length - 1;
+      showSlide(currentSlide);
     }
   </script>
-
 </body>
 </html>
