@@ -54,26 +54,70 @@
       padding: 80px 24px;
     }
 
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-header-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .section-header-divider::before,
+    .section-header-divider::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--brown-light));
+    }
+
+    .section-header-divider::after {
+      background: linear-gradient(90deg, var(--brown-light), transparent);
+    }
+
+    .section-header-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+    }
+
     .section-title {
       font-family: 'Pacifico', cursive;
       font-size: clamp(1.8rem, 4vw, 2.6rem);
       color: var(--brown-dark);
-      text-align: center;
-      margin-bottom: 50px;
-      position: relative;
-      display: inline-block;
-      left: 50%;
-      transform: translateX(-50%);
+      margin-bottom: 10px;
     }
 
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 60%;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      margin: 10px auto 0;
-      border-radius: 2px;
+    .section-subtitle {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 0.97rem;
+      color: var(--brown-light);
+      letter-spacing: 0.01em;
+    }
+
+    /* keep override for dark bestsellers section */
+    .bestsellers-section .section-title {
+      color: #ffffff;
+    }
+
+    .bestsellers-section .section-subtitle {
+      color: rgba(255,255,255,0.5);
+    }
+
+    .bestsellers-section .section-header-divider::before {
+      background: linear-gradient(90deg, transparent, rgba(200,160,122,0.6));
+    }
+
+    .bestsellers-section .section-header-divider::after {
+      background: linear-gradient(90deg, rgba(200,160,122,0.6), transparent);
     }
 
     /* ─── OUR STORY ─── */
@@ -418,6 +462,258 @@
       color: var(--accent);
     }
 
+    /* ─── CONTACT & RESERVATION ─── */
+    .contact-section {
+      background-color: var(--cream);
+    }
+
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    /* Left column */
+    .contact-info {
+      flex: 1 1 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .contact-block {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--brown-dark);
+      color: var(--warm-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .contact-block-text h4 {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--brown-dark);
+      margin-bottom: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    .contact-block-text p,
+    .contact-block-text a {
+      font-family: 'Lora', serif;
+      font-size: 0.9rem;
+      color: var(--brown-mid);
+      line-height: 1.65;
+      text-decoration: none;
+    }
+
+    .contact-block-text a {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .contact-block-text a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-divider {
+      border: none;
+      border-top: 1px solid rgba(200,160,122,0.3);
+    }
+
+    .contact-socials-label {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brown-light);
+      margin-bottom: 12px;
+    }
+
+    .contact-socials {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid var(--brown-light);
+      color: var(--brown-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .social-btn:hover {
+      background: var(--brown-dark);
+      border-color: var(--brown-dark);
+      color: var(--warm-white);
+    }
+
+    .contact-meta {
+      background: var(--warm-white);
+      border: 1px solid rgba(200,160,122,0.25);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .contact-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.85rem;
+    }
+
+    .contact-meta-row span:first-child {
+      color: var(--brown-mid);
+    }
+
+    .contact-meta-row span:last-child {
+      color: var(--brown-dark);
+      font-weight: 600;
+      text-align: right;
+    }
+
+    /* Right column — reservation card */
+    .reservation-card {
+      flex: 1 1 340px;
+      background: var(--warm-white);
+      border: 1px solid rgba(200,160,122,0.3);
+      border-radius: 20px;
+      padding: 36px 32px;
+      box-shadow: 0 8px 32px var(--shadow);
+    }
+
+    .reservation-card h3 {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.6rem;
+      color: var(--brown-dark);
+      margin-bottom: 28px;
+    }
+
+    .res-row {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .res-field {
+      flex: 1 1 140px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .res-field.full {
+      flex: 1 1 100%;
+    }
+
+    .res-field input,
+    .res-field select,
+    .res-field textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid rgba(200,160,122,0.4);
+      border-radius: 10px;
+      background: var(--cream);
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.9rem;
+      color: var(--brown-dark);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      appearance: auto;
+    }
+
+    .res-field input::placeholder,
+    .res-field textarea::placeholder {
+      color: var(--brown-light);
+    }
+
+    .res-field input:focus,
+    .res-field select:focus,
+    .res-field textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(212,132,90,0.15);
+    }
+
+    .res-field textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .res-submit {
+      width: 100%;
+      margin-top: 6px;
+      padding: 14px;
+      background: var(--brown-dark);
+      color: var(--warm-white);
+      border: none;
+      border-radius: 10px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .res-submit:hover {
+      background: var(--accent);
+      transform: scale(1.01);
+    }
+
+    .res-or-call {
+      text-align: center;
+      margin-top: 14px;
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 0.83rem;
+      color: var(--brown-light);
+    }
+
+    .res-or-call a {
+      color: var(--brown-mid);
+      text-decoration: none;
+    }
+
+    .res-or-call a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      .reservation-card {
+        padding: 28px 20px;
+      }
+      .res-row { gap: 10px; }
+    }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 640px) {
       section {
@@ -447,7 +743,11 @@
 
 <!-- OUR STORY -->
 <section class="story-section">
-  <h2 class="section-title">Our Story</h2>
+  <div class="section-header">
+    <div class="section-header-divider"><span class="section-header-dot"></span></div>
+    <h2 class="section-title">Our Story</h2>
+    <p class="section-subtitle">How two people turned passion into a cozy corner café</p>
+  </div>
   <div class="story-inner">
     <div class="story-text">
       <p>He Brews She Bakes Café started as an online business built around homemade baked goods created to make customers feel a sense of warmth, comfort, and familiarity — a true "home away from home."</p>
@@ -463,7 +763,11 @@
 
 <!-- MENU -->
 <section class="menu-section">
-  <h2 class="section-title">Our Menu</h2>
+  <div class="section-header">
+    <div class="section-header-divider"><span class="section-header-dot"></span></div>
+    <h2 class="section-title">Our Menu</h2>
+    <p class="section-subtitle">Browse our full selection of drinks, baked goods & meals</p>
+  </div>
   <div class="menu-slider">
     <div class="slide-wrapper">
       <img id="currentSlide" src="menu1.png" alt="Menu Slide">
@@ -478,7 +782,11 @@
 
 <!-- BEST SELLERS -->
 <section class="bestsellers-section">
-  <h2 class="section-title">Best Sellers</h2>
+  <div class="section-header">
+    <div class="section-header-divider"><span class="section-header-dot"></span></div>
+    <h2 class="section-title">Best Sellers</h2>
+    <p class="section-subtitle">The ones our customers keep coming back for</p>
+  </div>
   <div class="bestsellers-grid">
 
     <div class="bs-card">
@@ -530,7 +838,11 @@
 
 <!-- TESTIMONIALS -->
 <section class="testimonials-section">
-  <h2 class="section-title">What Customers Say</h2>
+  <div class="section-header">
+    <div class="section-header-divider"><span class="section-header-dot"></span></div>
+    <h2 class="section-title">What Customers Say</h2>
+    <p class="section-subtitle">Real experiences from our regulars and first-timers</p>
+  </div>
   <div class="testimonials-grid">
 
     <div class="testimonial-card">
@@ -580,7 +892,11 @@
 
 <!-- VISIT US -->
 <section class="visit-us-section">
-  <h2 class="section-title">Visit Us</h2>
+  <div class="section-header">
+    <div class="section-header-divider"><span class="section-header-dot"></span></div>
+    <h2 class="section-title">Visit Us</h2>
+    <p class="section-subtitle">Find us at either of our two Cavite locations</p>
+  </div>
   <div class="maps-grid">
     <div class="map-card">
       <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=120.9428%2C14.3244%2C120.9628%2C14.3344&layer=mapnik&marker=14.3294%2C120.9528" allowfullscreen="" loading="lazy"></iframe>
@@ -598,6 +914,146 @@
         <a class="map-link" href="https://www.google.com/maps/search/He+Brews+She+Bakes+One+Lancaster+Park+Imus+Cavite" target="_blank" rel="noopener">Open in Google Maps ↗</a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- CONTACT & RESERVATION -->
+<section class="contact-section">
+  <div class="section-header">
+    <div class="section-header-divider"><span class="section-header-dot"></span></div>
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="section-subtitle">Reserve a table or drop us a message — we'd love to hear from you</p>
+  </div>
+  <div class="contact-inner">
+
+    <!-- Left: Info -->
+    <div class="contact-info">
+
+      <div class="contact-block">
+        <div class="contact-icon">📍</div>
+        <div class="contact-block-text">
+          <h4>Salitran Branch</h4>
+          <p>BLK 41 Lot 1 Jose Abad Santos<br>Dasmariñas, Cavite 4114</p>
+          <a href="https://www.google.com/maps/search/He+Brews+She+Bakes+Salitran+Dasmarinas" target="_blank" rel="noopener">Search on Google Maps ↗</a>
+        </div>
+      </div>
+
+      <div class="contact-block">
+        <div class="contact-icon">📍</div>
+        <div class="contact-block-text">
+          <h4>Lancaster Branch</h4>
+          <p>One Lancaster Park Showroom<br>Imus, Cavite</p>
+          <a href="https://www.google.com/maps/search/He+Brews+She+Bakes+One+Lancaster+Imus+Cavite" target="_blank" rel="noopener">Search on Google Maps ↗</a>
+        </div>
+      </div>
+
+      <div class="contact-block">
+        <div class="contact-icon">🕐</div>
+        <div class="contact-block-text">
+          <h4>Hours</h4>
+          <p>Monday – Sunday: 7:00 AM – 9:00 PM</p>
+        </div>
+      </div>
+
+      <div class="contact-block">
+        <div class="contact-icon">📞</div>
+        <div class="contact-block-text">
+          <h4>Phone</h4>
+          <p><a href="tel:+63" style="color:var(--brown-mid);font-style:normal;">Contact us via Facebook or Instagram</a></p>
+        </div>
+      </div>
+
+      <hr class="contact-divider">
+
+      <div>
+        <p class="contact-socials-label">Follow Us</p>
+        <div class="contact-socials">
+          <a class="social-btn" href="https://www.facebook.com/HeBrewsSheBakesPh/" target="_blank" rel="noopener" title="Facebook">f</a>
+          <a class="social-btn" href="https://www.instagram.com/hebrewsshebakesph/" target="_blank" rel="noopener" title="Instagram">&#9749;</a>
+        </div>
+      </div>
+
+      <div class="contact-meta">
+        <div class="contact-meta-row">
+          <span>Price Range</span>
+          <span>₱100 – ₱500 / person</span>
+        </div>
+        <div class="contact-meta-row">
+          <span>Service</span>
+          <span>Dine-in · Takeout</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right: Reservation -->
+    <div class="reservation-card">
+      <h3>Make a Reservation</h3>
+
+      <div class="res-row">
+        <div class="res-field">
+          <input type="text" placeholder="Your name" id="res-name">
+        </div>
+        <div class="res-field">
+          <input type="tel" placeholder="Phone number" id="res-phone">
+        </div>
+      </div>
+
+      <div class="res-row">
+        <div class="res-field">
+          <select id="res-branch">
+            <option value="" disabled selected>Select Branch</option>
+            <option value="salitran">Salitran Branch</option>
+            <option value="lancaster">Lancaster Branch</option>
+          </select>
+        </div>
+        <div class="res-field">
+          <input type="date" id="res-date">
+        </div>
+      </div>
+
+      <div class="res-row">
+        <div class="res-field">
+          <select id="res-time">
+            <option value="" disabled selected>Time</option>
+            <option>7:00 AM</option><option>7:30 AM</option>
+            <option>8:00 AM</option><option>8:30 AM</option>
+            <option>9:00 AM</option><option>9:30 AM</option>
+            <option>10:00 AM</option><option>10:30 AM</option>
+            <option>11:00 AM</option><option>11:30 AM</option>
+            <option>12:00 PM</option><option>12:30 PM</option>
+            <option>1:00 PM</option><option>1:30 PM</option>
+            <option>2:00 PM</option><option>2:30 PM</option>
+            <option>3:00 PM</option><option>3:30 PM</option>
+            <option>4:00 PM</option><option>4:30 PM</option>
+            <option>5:00 PM</option><option>5:30 PM</option>
+            <option>6:00 PM</option><option>6:30 PM</option>
+            <option>7:00 PM</option><option>7:30 PM</option>
+            <option>8:00 PM</option><option>8:30 PM</option>
+          </select>
+        </div>
+        <div class="res-field">
+          <select id="res-guests">
+            <option value="" disabled selected>Guests</option>
+            <option>1 guest</option><option>2 guests</option>
+            <option>3 guests</option><option>4 guests</option>
+            <option>5 guests</option><option>6 guests</option>
+            <option>7 guests</option><option>8 guests</option>
+            <option>9 guests</option><option>10+ guests</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="res-row">
+        <div class="res-field full">
+          <textarea placeholder="Special requests (optional)" id="res-notes"></textarea>
+        </div>
+      </div>
+
+      <button class="res-submit" onclick="submitReservation()">Request Reservation</button>
+      <p class="res-or-call">Or reach us on <a href="https://www.facebook.com/HeBrewsSheBakesPh/" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/hebrewsshebakesph/" target="_blank" rel="noopener">Instagram</a></p>
+    </div>
+
   </div>
 </section>
 
@@ -629,6 +1085,28 @@
   function nextSlide() {
     currentIndex = (currentIndex + 1) % slides.length;
     showSlide(currentIndex);
+  }
+
+  // ── Reservation ──
+  function submitReservation() {
+    const name = document.getElementById('res-name').value.trim();
+    const phone = document.getElementById('res-phone').value.trim();
+    const branch = document.getElementById('res-branch').value;
+    const date = document.getElementById('res-date').value;
+    const time = document.getElementById('res-time').value;
+    const guests = document.getElementById('res-guests').value;
+    if (!name || !phone || !branch || !date || !time || !guests) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+    const notes = document.getElementById('res-notes').value.trim();
+    const branchLabel = branch === 'salitran' ? 'Salitran Branch' : 'Lancaster Branch';
+    const msg = encodeURIComponent(
+      `Hi! I'd like to make a reservation.\nName: ${name}\nPhone: ${phone}\nBranch: ${branchLabel}\nDate: ${date}\nTime: ${time}\nGuests: ${guests}` +
+      (notes ? `\nNotes: ${notes}` : '')
+    );
+    window.open(`https://www.facebook.com/HeBrewsSheBakesPh/`, '_blank');
+    alert('Reservation request noted! Please send your details to our Facebook page. We\'ve opened it for you.');
   }
 </script>
 
