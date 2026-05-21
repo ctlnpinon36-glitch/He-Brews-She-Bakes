@@ -3,116 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>He Brews She Bakes - Our Menu</title>
+  <title>He Brews She Bakes – Our Menu</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
   <style>
     /* Global Styles */
-    * { box-sizing: border-box; margin:0; padding:0; font-family:'Montserrat', sans-serif; }
-    body { background-color:#f8f1eb; color:#3b3b3b; line-height:1.6; }
-    a { text-decoration:none; color:inherit; }
-    img { max-width:100%; display:block; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
+    body { background-color: #f8f1eb; color: #3b3b3b; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
 
-    /* Header */
-    header { text-align:center; padding:50px 20px 20px; background:#fff8f2; }
-    header h1 { font-family:'Pacifico', cursive; font-size:3rem; margin-bottom:10px; color:#a17b5b; }
-    header p { font-size:1rem; color:#7a7a7a; }
+    header { text-align: center; padding: 50px 20px; }
+    header h1 { font-family: 'Pacifico', cursive; font-size: 3rem; margin-bottom: 10px; }
+    header p { font-size: 1.1rem; color: #7a7a7a; }
 
-    /* Menu Carousel */
-    .menu-section { padding:50px 20px; }
-    .menu-section h2 { text-align:center; font-size:2.5rem; margin-bottom:20px; }
-    .menu-carousel { position:relative; width:100%; overflow:hidden; margin:20px 0; }
-    .menu-items-wrapper { display:flex; transition:transform 0.5s ease; }
-    .menu-item { min-width:300px; margin:0 10px; text-align:center; }
-    .menu-item img { width:100%; border-radius:10px; }
-    .menu-item h3 { margin:10px 0 5px; font-size:1.1rem; }
-    .menu-item p { font-size:0.9rem; color:#555; }
-
-    .menu-carousel button {
-      position:absolute; top:50%; transform:translateY(-50%);
-      font-size:2rem; background:rgba(255,255,255,0.7); border:none;
-      cursor:pointer; z-index:10; padding:10px; border-radius:50%;
+    /* Menu Section */
+    .menu-section { text-align: center; padding: 50px 20px; background: #fff1e8; }
+    .menu-section h2 { font-size: 2rem; margin-bottom: 30px; }
+    .carousel { position: relative; max-width: 500px; margin: 0 auto; }
+    .carousel img { width: 100%; border-radius: 15px; }
+    .carousel button { 
+      position: absolute; top: 50%; transform: translateY(-50%); 
+      background: rgba(0,0,0,0.5); border: none; color: #fff; 
+      font-size: 2rem; padding: 5px 10px; cursor: pointer;
+      border-radius: 5px;
     }
-    .prev { left:0; }
-    .next { right:0; }
+    .carousel button:hover { background: rgba(0,0,0,0.7); }
+    .carousel .prev { left: 10px; }
+    .carousel .next { right: 10px; }
 
     /* Customer Photos */
-    .customer-photos { padding:50px 20px; background:#f2ede8; }
-    .customer-photos h2 { text-align:center; font-family:'Pacifico', cursive; font-size:2.5rem; margin-bottom:50px; color:#a17b5b; }
-    .customer-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:20px; justify-items:center; align-items:center; }
-    .customer-grid img { width:150px; height:150px; object-fit:cover; border-radius:50%; border:3px solid #fff; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+    .customer-photos { padding: 50px 20px; background: #f2ede8; text-align: center; }
+    .customer-photos h2 { font-family: 'Pacifico', cursive; font-size: 2.5rem; margin-bottom: 50px; color: #a17b5b; }
+    .customer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; justify-items: center; align-items: center; }
+    .customer-grid img { width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 
-    /* Footer */
-    footer { text-align:center; padding:30px; font-size:0.9rem; color:#7a7a7a; }
-
-    @media (max-width:768px) {
-      header h1 { font-size:2.5rem; }
-      .menu-section h2 { font-size:2rem; }
-    }
+    footer { text-align: center; padding: 30px; font-size: 0.9rem; color: #7a7a7a; background: #fff1e8; }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>He Brews She Bakes</h1>
-    <p>Since 2020 | Cafe & Bakery</p>
-  </header>
+<header>
+  <h1>He Brews She Bakes</h1>
+  <p>Since 2020 | Cafe & Bakery</p>
+</header>
 
-  <!-- Menu Carousel -->
-  <section class="menu-section">
-    <h2>Our Menu</h2>
-    <div class="menu-carousel">
-      <button class="prev">&#10094;</button>
-      <div class="menu-items-wrapper">
-        <div class="menu-item"><img src="menu1.png" alt="Menu 1"><h3>Menu Item 1</h3><p>Description / Price</p></div>
-        <div class="menu-item"><img src="menu2.png" alt="Menu 2"><h3>Menu Item 2</h3><p>Description / Price</p></div>
-        <div class="menu-item"><img src="menu3.png" alt="Menu 3"><h3>Menu Item 3</h3><p>Description / Price</p></div>
-        <div class="menu-item"><img src="menu4.png" alt="Menu 4"><h3>Menu Item 4</h3><p>Description / Price</p></div>
-        <div class="menu-item"><img src="menu5.png" alt="Menu 5"><h3>Menu Item 5</h3><p>Description / Price</p></div>
-        <div class="menu-item"><img src="menu6.png" alt="Menu 6"><h3>Menu Item 6</h3><p>Description / Price</p></div>
-        <div class="menu-item"><img src="menu7.png" alt="Menu 7"><h3>Menu Item 7</h3><p>Description / Price</p></div>
-        <div class="menu-item"><img src="menu8.png" alt="Menu 8"><h3>Menu Item 8</h3><p>Description / Price</p></div>
-        <div class="menu-item"><img src="menu9.png" alt="Menu 9"><h3>Menu Item 9</h3><p>Description / Price</p></div>
-      </div>
-      <button class="next">&#10095;</button>
-    </div>
-  </section>
+<!-- Menu Section -->
+<section class="menu-section">
+  <h2>Our Menu</h2>
+  <div class="carousel">
+    <button class="prev">&#10094;</button>
+    <img id="carousel-image" src="menu1.png" alt="Menu Item">
+    <button class="next">&#10095;</button>
+  </div>
+</section>
 
-  <!-- Customer Photos -->
-  <section class="customer-photos">
-    <h2>Our Happy Customers</h2>
-    <div class="customer-grid">
-      <img src="path_to_customer_1.jpg" alt="Customer Photo">
-      <img src="path_to_customer_2.jpg" alt="Customer Photo">
-      <img src="path_to_customer_3.jpg" alt="Customer Photo">
-      <img src="path_to_customer_4.jpg" alt="Customer Photo">
-    </div>
-  </section>
+<!-- Customer Photos -->
+<section class="customer-photos">
+  <h2>Our Happy Customers</h2>
+  <div class="customer-grid">
+    <img src="customer1.jpg" alt="Customer Photo">
+    <img src="customer2.jpg" alt="Customer Photo">
+    <img src="customer3.jpg" alt="Customer Photo">
+    <img src="customer4.jpg" alt="Customer Photo">
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>&copy; 2026 He Brews She Bakes. All Rights Reserved.</footer>
+<footer>
+  &copy; 2026 He Brews She Bakes. All Rights Reserved.
+</footer>
 
-  <!-- JS for Carousel -->
-  <script>
-    const wrapper = document.querySelector('.menu-items-wrapper');
-    const prev = document.querySelector('.prev');
-    const next = document.querySelector('.next');
-    let scrollAmount = 0;
-    const itemWidth = 320;
-    const maxScroll = wrapper.scrollWidth - wrapper.clientWidth;
+<script>
+  const images = ["menu1.png","menu2.png","menu3.png","menu4.png","menu5.png","menu6.png","menu7.png","menu8.png","menu9.png"];
+  let currentIndex = 0;
 
-    next.addEventListener('click', () => {
-      scrollAmount += itemWidth;
-      if (scrollAmount > maxScroll) scrollAmount = 0;
-      wrapper.style.transform = `translateX(-${scrollAmount}px)`;
-    });
+  const carouselImage = document.getElementById("carousel-image");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
 
-    prev.addEventListener('click', () => {
-      scrollAmount -= itemWidth;
-      if (scrollAmount < 0) scrollAmount = maxScroll;
-      wrapper.style.transform = `translateX(-${scrollAmount}px)`;
-    });
-  </script>
+  function showImage(index) {
+    carouselImage.src = images[index];
+  }
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  });
+</script>
 
 </body>
 </html>
