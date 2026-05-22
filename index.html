@@ -1333,6 +1333,118 @@
       .letter-card { padding: 40px 24px 32px; }
     }
 
+
+    /* ─── MEMORY + LETTER SIDE BY SIDE ─── */
+    .memory-letter-wrapper {
+      display: flex;
+      align-items: stretch;
+      min-height: 700px;
+    }
+
+    .memory-panel {
+      flex: 1;
+      background-color: #2A1F14;
+      padding: 64px 40px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .letter-panel {
+      flex: 1;
+      background-color: #F5F2EF;
+      padding: 64px 40px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .panel-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .panel-title-dark {
+      font-family: 'Lora', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #F5F2EF;
+      margin-bottom: 8px;
+    }
+
+    .panel-sub-dark {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.83rem;
+      color: rgba(232,227,222,0.6);
+    }
+
+    .panel-title-light {
+      font-family: 'Lora', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #3E2F20;
+      margin-bottom: 8px;
+    }
+
+    .panel-sub-light {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.83rem;
+      color: #7D6A5A;
+    }
+
+    .panel-divider-dark {
+      width: 40px;
+      height: 2px;
+      background: #A8978A;
+      margin: 14px auto 0;
+      border-radius: 2px;
+    }
+
+    .panel-divider-light {
+      width: 40px;
+      height: 2px;
+      background: #A8978A;
+      margin: 14px auto 0;
+      border-radius: 2px;
+    }
+
+    .memory-upload-box-inline {
+      border: 2px dashed rgba(168,151,138,0.4);
+      border-radius: 16px;
+      padding: 24px 20px;
+      text-align: center;
+      cursor: pointer;
+      margin-bottom: 24px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .memory-upload-box-inline:hover {
+      border-color: #A8978A;
+      background: rgba(168,151,138,0.06);
+    }
+
+    .memory-grid-inline {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      flex: 1;
+    }
+
+    .letter-card-inline {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(62,47,32,0.08);
+      padding: 32px 28px;
+      border-top: 5px solid #A8978A;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (max-width: 860px) {
+      .memory-letter-wrapper { flex-direction: column; }
+      .memory-panel, .letter-panel { padding: 48px 24px; }
+      .memory-grid-inline { grid-template-columns: repeat(3, 1fr); }
+    }
+
   </style>
 </head>
 <body>
@@ -1569,79 +1681,80 @@
 
 </section>
 
-<!-- MEMORY WALL -->
-<section class="memory-wall-section" id="memory-wall">
-  <div class="section-header">
-    <div class="section-header-divider"><span class="section-header-dot"></span></div>
-    <h2 class="section-title">Memory Wall</h2>
-    <p class="section-subtitle">Share a moment you had here — your photo becomes part of our story</p>
+<!-- MEMORY WALL + LETTER SIDE BY SIDE -->
+<div class="memory-letter-wrapper" id="memory-wall">
+
+  <!-- LEFT: MEMORY WALL -->
+  <div class="memory-panel">
+    <div class="panel-header">
+      <h2 class="panel-title-dark">Memory Wall</h2>
+      <p class="panel-sub-dark">Share a moment you had here — your photo becomes part of our story</p>
+      <div class="panel-divider-dark"></div>
+    </div>
+
+    <div class="memory-upload-box-inline">
+      <div class="memory-upload-icon">📷</div>
+      <div class="memory-upload-title" style="color:#F5F2EF;font-family:'Lora',serif;font-size:0.95rem;margin-bottom:6px;">Upload your café memory</div>
+      <div class="memory-upload-sub" style="margin-bottom:14px;">JPG, PNG or HEIC · Max 10MB</div>
+      <button class="memory-upload-btn">Choose a Photo</button>
+      <input class="memory-name-input" type="text" placeholder="Your name or nickname (optional)">
+    </div>
+
+    <div class="memory-grid-inline">
+      <div class="memory-card">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=80" alt="Memory">
+        <div class="memory-card-label">— Gia, March 2025</div>
+      </div>
+      <div class="memory-card">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80" alt="Memory">
+        <div class="memory-card-label">— Marco & Bea</div>
+      </div>
+      <div class="memory-card">
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=400&q=80" alt="Memory">
+        <div class="memory-card-label">— Anon</div>
+      </div>
+      <div class="memory-card">
+        <img src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=400&q=80" alt="Memory">
+        <div class="memory-card-label">— Kat, April 2025</div>
+      </div>
+      <div class="memory-coming-soon">+</div>
+      <div class="memory-coming-soon">+</div>
+    </div>
   </div>
 
-  <div class="memory-upload-box">
-    <div class="memory-upload-icon">📷</div>
-    <div class="memory-upload-title">Upload your café memory</div>
-    <div class="memory-upload-sub">JPG, PNG or HEIC · Max 10MB</div>
-    <button class="memory-upload-btn">Choose a Photo</button>
-    <input class="memory-name-input" type="text" placeholder="Your name or nickname (optional)">
+  <!-- RIGHT: LETTER TO FUTURE SELF -->
+  <div class="letter-panel" id="letter">
+    <div class="panel-header">
+      <h2 class="panel-title-light">A Letter for Your Future Self</h2>
+      <p class="panel-sub-light">Write something worth remembering. We'll deliver it to your inbox in 6 months.</p>
+      <div class="panel-divider-light"></div>
+    </div>
+
+    <div class="letter-card-inline">
+      <div style="margin-bottom:18px;">
+        <div class="letter-label">Your Name</div>
+        <input class="letter-field" type="text" placeholder="What should we call you?">
+      </div>
+      <div style="margin-bottom:18px;">
+        <div class="letter-label">Send To (Gmail)</div>
+        <input class="letter-field" type="email" placeholder="you@gmail.com">
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;">
+        <div class="letter-label">Your Letter</div>
+        <textarea class="letter-textarea" style="flex:1;min-height:140px;" placeholder="Dear future me, by the time you read this..."></textarea>
+      </div>
+
+      <div class="letter-schedule-row">
+        <span class="letter-schedule-label">📅 Scheduled delivery:</span>
+        <span class="letter-schedule-badge">6 months · November 23, 2026</span>
+      </div>
+
+      <button class="letter-submit-btn">Seal &amp; Send My Letter ✉</button>
+      <p class="letter-disclaimer">Your letter will be kept private and delivered only to the email you provided.</p>
+    </div>
   </div>
 
-  <div class="memory-grid">
-    <div class="memory-card">
-      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=80" alt="Memory">
-      <div class="memory-card-label">— Gia, March 2025</div>
-    </div>
-    <div class="memory-card">
-      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80" alt="Memory">
-      <div class="memory-card-label">— Marco & Bea</div>
-    </div>
-    <div class="memory-card">
-      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=400&q=80" alt="Memory">
-      <div class="memory-card-label">— Anon</div>
-    </div>
-    <div class="memory-card">
-      <img src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=400&q=80" alt="Memory">
-      <div class="memory-card-label">— Kat, April 2025</div>
-    </div>
-    <div class="memory-coming-soon">+</div>
-    <div class="memory-coming-soon">+</div>
-    <div class="memory-coming-soon">+</div>
-    <div class="memory-coming-soon">+</div>
-  </div>
-</section>
-
-<!-- LETTER TO FUTURE SELF -->
-<section class="letter-section" id="letter">
-  <div class="section-header">
-    <div class="section-header-divider"><span class="section-header-dot"></span></div>
-    <h2 class="section-title">A Letter for Your Future Self</h2>
-    <p class="section-subtitle">Write something worth remembering. We'll deliver it to your inbox in 6 months.</p>
-  </div>
-
-  <div class="letter-card">
-    <div style="margin-bottom:20px;">
-      <div class="letter-label">Your Name</div>
-      <input class="letter-field" type="text" placeholder="What should we call you?">
-    </div>
-    <div style="margin-bottom:20px;">
-      <div class="letter-label">Send To (Gmail)</div>
-      <input class="letter-field" type="email" placeholder="you@gmail.com">
-    </div>
-    <div>
-      <div class="letter-label">Your Letter</div>
-      <textarea class="letter-textarea" placeholder="Dear future me, by the time you read this..."></textarea>
-    </div>
-
-    <div class="letter-schedule-row">
-      <span class="letter-schedule-label">
-        📅 Scheduled delivery:
-      </span>
-      <span class="letter-schedule-badge">6 months from today · November 23, 2026</span>
-    </div>
-
-    <button class="letter-submit-btn">Seal &amp; Send My Letter ✉</button>
-    <p class="letter-disclaimer">Your letter will be kept private and delivered only to the email you provided.</p>
-  </div>
-</section>
+</div>
 
 <!-- VISIT US -->
 <section class="visit-us-section" id="visit-us">
