@@ -48,7 +48,12 @@
       max-height: 400px;
       display: block;
       object-fit: cover;
-      object-position: center 20%;
+      object-position: center 35%;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
     }
 
     /* ─── SECTION SHARED ─── */
@@ -1445,6 +1450,145 @@
       .memory-grid-inline { grid-template-columns: repeat(3, 1fr); }
     }
 
+
+    /* ─── SAME SEAT STORIES ─── */
+    .same-seat-section {
+      background-color: #EDEAE6;
+      padding: 80px 24px;
+    }
+
+    .same-seat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .seat-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 28px rgba(62,47,32,0.09);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .seat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 40px rgba(62,47,32,0.15);
+    }
+
+    .seat-card-img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      display: block;
+      filter: sepia(15%) brightness(0.95);
+      transition: filter 0.3s;
+    }
+
+    .seat-card:hover .seat-card-img {
+      filter: sepia(0%) brightness(1);
+    }
+
+    .seat-card-body {
+      padding: 24px 22px 26px;
+    }
+
+    .seat-card-tag {
+      display: inline-block;
+      background: #EDEAE6;
+      color: #7D6A5A;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 50px;
+      margin-bottom: 14px;
+    }
+
+    .seat-card-quote {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 0.92rem;
+      color: #3E2F20;
+      line-height: 1.75;
+      margin-bottom: 18px;
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .seat-card-quote::before {
+      content: '"';
+      position: absolute;
+      left: 0;
+      top: -4px;
+      font-size: 1.8rem;
+      color: #A8978A;
+      font-family: 'Lora', serif;
+      line-height: 1;
+    }
+
+    .seat-card-author {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #A8978A;
+      letter-spacing: 0.05em;
+    }
+
+    .seat-card-date {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.72rem;
+      color: #C8C0B8;
+      margin-top: 2px;
+    }
+
+    .same-seat-cta {
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .same-seat-cta p {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: #7D6A5A;
+      margin-bottom: 18px;
+    }
+
+    .same-seat-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #3E2F20;
+      color: #F5F2EF;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      letter-spacing: 0.03em;
+    }
+
+    .same-seat-btn:hover {
+      background: #7D6A5A;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 860px) {
+      .same-seat-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 540px) {
+      .same-seat-grid { grid-template-columns: 1fr; }
+    }
+
   </style>
 </head>
 <body>
@@ -1755,6 +1899,58 @@
   </div>
 
 </div>
+
+
+<!-- SAME SEAT STORIES -->
+<section class="same-seat-section" id="same-seat-stories">
+  <div class="section-header">
+    <div class="section-header-divider"><span class="section-header-dot"></span></div>
+    <h2 class="section-title">Same Seat Stories</h2>
+    <p class="section-subtitle">Different days, different people — but the same seat holds them all</p>
+  </div>
+
+  <div class="same-seat-grid">
+
+    <div class="seat-card">
+      <img class="seat-card-img" src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=700&q=80" alt="Café table by the window">
+      <div class="seat-card-body">
+        <span class="seat-card-tag">Table by the Window</span>
+        <p class="seat-card-quote">We used to spend hours on this exact seat — cramming for finals, laughing too loud, and ordering one too many lattes. College felt endless back then. Now we're scattered across different cities, but every time I pass by, I still look for our table.</p>
+        <div class="seat-card-author">— Caitlin &amp; JMAasim</div>
+        <div class="seat-card-date">Batch '27 · DLSU-D</div>
+      </div>
+    </div>
+
+    <div class="seat-card">
+      <img class="seat-card-img" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=700&q=80" alt="Corner café nook">
+      <div class="seat-card-body">
+        <span class="seat-card-tag">The Corner Nook</span>
+        <p class="seat-card-quote">My boyfriend proposed to me at this very spot. We had our first date here two years before — same corner, same order. He said he wanted it to begin and end in the same place. I said yes before he even finished the sentence.</p>
+        <div class="seat-card-author">— Bea R.</div>
+        <div class="seat-card-date">February 2025</div>
+      </div>
+    </div>
+
+    <div class="seat-card">
+      <img class="seat-card-img" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=700&q=80" alt="Solo seat near the counter">
+      <div class="seat-card-body">
+        <span class="seat-card-tag">Solo Seat, Counter Side</span>
+        <p class="seat-card-quote">Every Sunday morning for six months, this was my writing seat. I finished my thesis here — one chapter at a time, one coffee at a time. The baristas knew my order before I even sat down. That meant more than they'll ever know.</p>
+        <div class="seat-card-author">— Joaquin M.</div>
+        <div class="seat-card-date">Grad student, 2024</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="same-seat-cta">
+    <p>Have a memory tied to a seat here? We'd love to hear it.</p>
+    <a class="same-seat-btn" href="#memory-wall">
+      Share Your Story
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
 
 <!-- VISIT US -->
 <section class="visit-us-section" id="visit-us">
