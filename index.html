@@ -1048,6 +1048,291 @@
       .home-letter-block:last-child { border-bottom: none; }
     }
 
+
+    /* ─── MEMORY WALL ─── */
+    .memory-wall-section {
+      background-color: #2A1F14;
+      padding: 80px 24px;
+    }
+
+    .memory-wall-section .section-title { color: #F5F2EF; }
+    .memory-wall-section .section-subtitle { color: rgba(232,227,222,0.65); }
+    .memory-wall-section .section-header-divider::before {
+      background: linear-gradient(90deg, transparent, rgba(168,151,138,0.5));
+    }
+    .memory-wall-section .section-header-divider::after {
+      background: linear-gradient(90deg, rgba(168,151,138,0.5), transparent);
+    }
+    .memory-wall-section .section-header-dot { background: #A8978A; }
+
+    .memory-upload-box {
+      max-width: 500px;
+      margin: 0 auto 56px;
+      border: 2px dashed rgba(168,151,138,0.45);
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .memory-upload-box:hover {
+      border-color: #A8978A;
+      background: rgba(168,151,138,0.06);
+    }
+
+    .memory-upload-icon {
+      font-size: 2.4rem;
+      margin-bottom: 14px;
+    }
+
+    .memory-upload-title {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      color: #F5F2EF;
+      margin-bottom: 8px;
+    }
+
+    .memory-upload-sub {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.82rem;
+      color: rgba(232,227,222,0.5);
+      margin-bottom: 22px;
+    }
+
+    .memory-upload-btn {
+      display: inline-block;
+      background: #A8978A;
+      color: #3E2F20;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 10px 26px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .memory-upload-btn:hover { background: #C8C0B8; }
+
+    .memory-name-input {
+      width: 100%;
+      margin-top: 16px;
+      padding: 10px 16px;
+      border-radius: 50px;
+      border: 1px solid rgba(168,151,138,0.3);
+      background: rgba(255,255,255,0.05);
+      color: #F5F2EF;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.85rem;
+      outline: none;
+      text-align: center;
+    }
+
+    .memory-name-input::placeholder { color: rgba(232,227,222,0.35); }
+
+    .memory-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 800px) { .memory-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .memory-grid { grid-template-columns: 1fr 1fr; } }
+
+    .memory-card {
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 1;
+      background: rgba(168,151,138,0.1);
+      border: 1px solid rgba(168,151,138,0.2);
+    }
+
+    .memory-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: sepia(20%) brightness(0.9);
+      transition: filter 0.3s, transform 0.3s;
+    }
+
+    .memory-card:hover img {
+      filter: sepia(0%) brightness(1);
+      transform: scale(1.04);
+    }
+
+    .memory-card-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(30,20,10,0.75));
+      padding: 18px 12px 10px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.75rem;
+      color: rgba(245,242,239,0.9);
+      font-weight: 600;
+    }
+
+    .memory-coming-soon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1;
+      background: rgba(168,151,138,0.07);
+      border: 1px dashed rgba(168,151,138,0.25);
+      border-radius: 14px;
+      color: rgba(168,151,138,0.4);
+      font-size: 1.5rem;
+    }
+
+    /* ─── LETTER TO FUTURE SELF ─── */
+    .letter-section {
+      background-color: #F5F2EF;
+      padding: 80px 24px;
+    }
+
+    .letter-card {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 40px rgba(62,47,32,0.1);
+      padding: 48px 48px 40px;
+      border-top: 6px solid #A8978A;
+      position: relative;
+    }
+
+    .letter-card::before {
+      content: '✉';
+      position: absolute;
+      top: -22px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #A8978A;
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      line-height: 44px;
+      text-align: center;
+    }
+
+    .letter-label {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #A8978A;
+      margin-bottom: 6px;
+    }
+
+    .letter-field {
+      width: 100%;
+      padding: 11px 16px;
+      border: 1px solid #E0DAD4;
+      border-radius: 10px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.9rem;
+      color: #3E2F20;
+      background: #FDFBF9;
+      outline: none;
+      margin-bottom: 20px;
+      transition: border-color 0.2s;
+    }
+
+    .letter-field:focus { border-color: #A8978A; }
+
+    .letter-textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #E0DAD4;
+      border-radius: 10px;
+      font-family: 'Lora', serif;
+      font-size: 0.92rem;
+      color: #3E2F20;
+      background: #FDFBF9;
+      outline: none;
+      min-height: 160px;
+      resize: vertical;
+      line-height: 1.75;
+      margin-bottom: 20px;
+      transition: border-color 0.2s;
+    }
+
+    .letter-textarea:focus { border-color: #A8978A; }
+
+    .letter-schedule-row {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .letter-schedule-label {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.82rem;
+      color: #7D6A5A;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .letter-schedule-badge {
+      background: #EDEAE6;
+      color: #7D6A5A;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 50px;
+      border: 1px solid #C8C0B8;
+    }
+
+    .letter-submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: #3E2F20;
+      color: #F5F2EF;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      letter-spacing: 0.04em;
+    }
+
+    .letter-submit-btn:hover {
+      background: #7D6A5A;
+      transform: translateY(-1px);
+    }
+
+    .letter-disclaimer {
+      text-align: center;
+      margin-top: 16px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.75rem;
+      color: #A8978A;
+    }
+
+    @media (max-width: 600px) {
+      .letter-card { padding: 40px 24px 32px; }
+    }
+
   </style>
 </head>
 <body>
@@ -1282,6 +1567,80 @@
     "Some places stay with you long after you leave. He Brews She Bakes is one of those places — where coffee is brewed with intention and every baked good tells a story."
   </blockquote>
 
+</section>
+
+<!-- MEMORY WALL -->
+<section class="memory-wall-section" id="memory-wall">
+  <div class="section-header">
+    <div class="section-header-divider"><span class="section-header-dot"></span></div>
+    <h2 class="section-title">Memory Wall</h2>
+    <p class="section-subtitle">Share a moment you had here — your photo becomes part of our story</p>
+  </div>
+
+  <div class="memory-upload-box">
+    <div class="memory-upload-icon">📷</div>
+    <div class="memory-upload-title">Upload your café memory</div>
+    <div class="memory-upload-sub">JPG, PNG or HEIC · Max 10MB</div>
+    <button class="memory-upload-btn">Choose a Photo</button>
+    <input class="memory-name-input" type="text" placeholder="Your name or nickname (optional)">
+  </div>
+
+  <div class="memory-grid">
+    <div class="memory-card">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=80" alt="Memory">
+      <div class="memory-card-label">— Gia, March 2025</div>
+    </div>
+    <div class="memory-card">
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80" alt="Memory">
+      <div class="memory-card-label">— Marco & Bea</div>
+    </div>
+    <div class="memory-card">
+      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=400&q=80" alt="Memory">
+      <div class="memory-card-label">— Anon</div>
+    </div>
+    <div class="memory-card">
+      <img src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=400&q=80" alt="Memory">
+      <div class="memory-card-label">— Kat, April 2025</div>
+    </div>
+    <div class="memory-coming-soon">+</div>
+    <div class="memory-coming-soon">+</div>
+    <div class="memory-coming-soon">+</div>
+    <div class="memory-coming-soon">+</div>
+  </div>
+</section>
+
+<!-- LETTER TO FUTURE SELF -->
+<section class="letter-section" id="letter">
+  <div class="section-header">
+    <div class="section-header-divider"><span class="section-header-dot"></span></div>
+    <h2 class="section-title">A Letter for Your Future Self</h2>
+    <p class="section-subtitle">Write something worth remembering. We'll deliver it to your inbox in 6 months.</p>
+  </div>
+
+  <div class="letter-card">
+    <div style="margin-bottom:20px;">
+      <div class="letter-label">Your Name</div>
+      <input class="letter-field" type="text" placeholder="What should we call you?">
+    </div>
+    <div style="margin-bottom:20px;">
+      <div class="letter-label">Send To (Gmail)</div>
+      <input class="letter-field" type="email" placeholder="you@gmail.com">
+    </div>
+    <div>
+      <div class="letter-label">Your Letter</div>
+      <textarea class="letter-textarea" placeholder="Dear future me, by the time you read this..."></textarea>
+    </div>
+
+    <div class="letter-schedule-row">
+      <span class="letter-schedule-label">
+        📅 Scheduled delivery:
+      </span>
+      <span class="letter-schedule-badge">6 months from today · November 23, 2026</span>
+    </div>
+
+    <button class="letter-submit-btn">Seal &amp; Send My Letter ✉</button>
+    <p class="letter-disclaimer">Your letter will be kept private and delivered only to the email you provided.</p>
+  </div>
 </section>
 
 <!-- VISIT US -->
