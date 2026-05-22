@@ -720,13 +720,12 @@
     /* ─── NAVBAR ─── */
     nav {
       width: 100%;
-      background-color: rgba(245, 242, 239, 0.92);
-      border-bottom: 1px solid rgba(168,151,138,0.3);
+      background-color: #3E2F20;
+      border-bottom: 1px solid rgba(168,151,138,0.2);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 12px var(--shadow);
-      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
     }
 
     .nav-inner {
@@ -752,7 +751,7 @@
       font-size: 0.82rem;
       font-weight: 600;
       letter-spacing: 0.04em;
-      color: var(--brown-mid);
+      color: #C8C0B8;
       text-decoration: none;
       padding: 6px 12px;
       border-radius: 50px;
@@ -761,8 +760,8 @@
     }
 
     .nav-links a:hover {
-      background: var(--cream);
-      color: var(--brown-dark);
+      background: rgba(255,255,255,0.12);
+      color: #F5F2EF;
     }
 
     .nav-links a.active {
@@ -780,8 +779,8 @@
       width: 32px;
       height: 32px;
       border-radius: 50%;
-      border: 1.5px solid var(--brown-light);
-      color: var(--brown-mid);
+      border: 1.5px solid #A8978A;
+      color: #C8C0B8;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -850,6 +849,202 @@
       }
     }
 
+
+    /* ─── HOME CAMPAIGN HERO ─── */
+    .home-hero {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 0;
+    }
+
+    .home-hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(0.55);
+    }
+
+    .home-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 620px;
+      padding: 0 60px;
+    }
+
+    .home-hero-tag {
+      display: inline-block;
+      background: rgba(168,151,138,0.3);
+      border: 1px solid rgba(200,185,172,0.5);
+      color: #E8E3DE;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 50px;
+      margin-bottom: 22px;
+    }
+
+    .home-hero-title {
+      font-family: 'Lora', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 600;
+      color: #F5F2EF;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.4);
+    }
+
+    .home-hero-sub {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      color: rgba(232,227,222,0.85);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 460px;
+    }
+
+    .home-hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #F5F2EF;
+      color: #3E2F20;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      padding: 14px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+
+    .home-hero-btn:hover {
+      background: #3E2F20;
+      color: #F5F2EF;
+      transform: translateY(-2px);
+    }
+
+    .home-hero-btn svg {
+      transition: transform 0.2s;
+    }
+
+    .home-hero-btn:hover svg {
+      transform: translateX(3px);
+    }
+
+    @media (max-width: 600px) {
+      .home-hero { height: 420px; }
+      .home-hero-content { padding: 0 28px; }
+      .home-hero-title { font-size: 1.8rem; }
+    }
+
+
+    /* ─── HOME CAMPAIGN SECTION ─── */
+    .home-campaign-section {
+      background-color: #3E2F20;
+      padding: 90px 24px;
+      text-align: center;
+    }
+
+    .home-campaign-section .section-header-divider::before {
+      background: linear-gradient(90deg, transparent, rgba(168,151,138,0.5));
+    }
+    .home-campaign-section .section-header-divider::after {
+      background: linear-gradient(90deg, rgba(168,151,138,0.5), transparent);
+    }
+    .home-campaign-section .section-header-dot {
+      background: #A8978A;
+    }
+
+    .home-campaign-section .section-title {
+      color: #F5F2EF;
+    }
+
+    .home-campaign-section .section-subtitle {
+      color: rgba(232,227,222,0.7);
+    }
+
+    .home-acronym {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin: 48px auto 56px;
+      max-width: 800px;
+    }
+
+    .home-letter-block {
+      flex: 1;
+      padding: 36px 20px;
+      border-right: 1px solid rgba(168,151,138,0.2);
+      transition: background 0.3s;
+    }
+
+    .home-letter-block:last-child {
+      border-right: none;
+    }
+
+    .home-letter-block:hover {
+      background: rgba(255,255,255,0.05);
+    }
+
+    .home-letter {
+      font-family: 'Lora', serif;
+      font-size: 3rem;
+      font-weight: 600;
+      color: #A8978A;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .home-letter-word {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(232,227,222,0.5);
+      margin-bottom: 14px;
+    }
+
+    .home-letter-desc {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.82rem;
+      color: rgba(232,227,222,0.65);
+      line-height: 1.65;
+    }
+
+    .home-campaign-quote {
+      max-width: 640px;
+      margin: 0 auto 48px;
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: rgba(232,227,222,0.8);
+      line-height: 1.75;
+      border-left: 3px solid #A8978A;
+      padding-left: 24px;
+      text-align: left;
+    }
+
+    @media (max-width: 600px) {
+      .home-acronym { flex-direction: column; gap: 0; }
+      .home-letter-block { border-right: none; border-bottom: 1px solid rgba(168,151,138,0.2); }
+      .home-letter-block:last-child { border-bottom: none; }
+    }
+
   </style>
 </head>
 <body>
@@ -883,6 +1078,21 @@
 <header>
   <img src="HBSBHeader.png" alt="He Brews She Bakes Logo">
 </header>
+
+
+<!-- HOME CAMPAIGN HERO -->
+<section class="home-hero" id="home-hero">
+  <img class="home-hero-img" src="Screenshot_2026-05-23_at_4_20_26_AM.png" alt="He Brews She Bakes Interior">
+  <div class="home-hero-content">
+    <span class="home-hero-tag">Our Campaign</span>
+    <h1 class="home-hero-title">Heart of Meaningful<br>Experience</h1>
+    <p class="home-hero-sub">Some places stay with people long after they leave. For many, cafés become more than spaces for food and drink.</p>
+    <a class="home-hero-btn" href="#home-campaign">
+      Take me HOME
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
 
 <!-- OUR STORY -->
 <section class="story-section" id="our-story">
@@ -1031,6 +1241,44 @@
     </div>
 
   </div>
+</section>
+
+
+<!-- HOME CAMPAIGN -->
+<section class="home-campaign-section" id="home-campaign">
+  <div class="section-header">
+    <div class="section-header-divider"><span class="section-header-dot"></span></div>
+    <h2 class="section-title">H.O.M.E.</h2>
+    <p class="section-subtitle">Heart of Meaningful Experience</p>
+  </div>
+
+  <div class="home-acronym">
+    <div class="home-letter-block">
+      <div class="home-letter">H</div>
+      <div class="home-letter-word">Heart</div>
+      <div class="home-letter-desc">Every cup and every bite is made with genuine care — from the people behind the counter to the warmth in the space.</div>
+    </div>
+    <div class="home-letter-block">
+      <div class="home-letter">O</div>
+      <div class="home-letter-word">Of</div>
+      <div class="home-letter-desc">A place that connects — where strangers become regulars, and regulars become family.</div>
+    </div>
+    <div class="home-letter-block">
+      <div class="home-letter">M</div>
+      <div class="home-letter-word">Meaningful</div>
+      <div class="home-letter-desc">Not just another café visit. A moment that lingers — in taste, in feeling, in memory.</div>
+    </div>
+    <div class="home-letter-block">
+      <div class="home-letter">E</div>
+      <div class="home-letter-word">Experience</div>
+      <div class="home-letter-desc">From the first sip to the last crumb, we craft an experience that makes you want to come back.</div>
+    </div>
+  </div>
+
+  <blockquote class="home-campaign-quote">
+    "Some places stay with you long after you leave. He Brews She Bakes is one of those places — where coffee is brewed with intention and every baked good tells a story."
+  </blockquote>
+
 </section>
 
 <!-- VISIT US -->
